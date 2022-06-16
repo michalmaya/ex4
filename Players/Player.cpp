@@ -79,3 +79,12 @@ ostream& operator<<(ostream& os, const Player& player)
     player.printInfo(os);
     return os;
 }
+
+
+String Player::getName () const{
+    return m_name;
+}
+
+int Player::getCoins() const{
+    return m_coins;
+}
