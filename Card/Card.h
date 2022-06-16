@@ -17,7 +17,7 @@ typedef std::ostream ostream;
 class Card{
 public:
     Card()=default;
-    ~Card()=default;
+    virtual ~Card()=default;
     Card(Card& other)=default;
     Card& operator=(Card& other)= default;
     virtual void printCard();
