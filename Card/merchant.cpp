@@ -9,7 +9,7 @@ Player& Merchant :: playCard(Player& player){
     int input = 0;
     printMerchantInitialMessageForInteractiveEncounter(std::cout,player.getName(), player.getCoins());
     std::cin >> input;
-    if (input != (0 | 1| 2) {
+    if (input != (0 | 1| 2)) {
         printInvalidInput();
         std::cin >> input;
     }
