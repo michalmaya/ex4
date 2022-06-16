@@ -9,12 +9,12 @@ Player& Merchant :: playCard(Player& player){
     int input = 0;
     printMerchantInitialMessageForInteractiveEncounter(std::cout,player.getName(), player.getCoins());
     std::cin >> input;
-    if (input != (0 | 1| 2)) {
+    if (input != (valid1 || valid2|| valid3)) {
         printInvalidInput();
         std::cin >> input;
     }
     switch (input) {
-        case (1):
+        case (valid2):
             if(player.pay(healCost)){
                 player.heal(heal);
             }
@@ -22,7 +22,7 @@ Player& Merchant :: playCard(Player& player){
                 printMerchantInsufficientCoins(std::cout);
             }
             printMerchantSummary(std::cout, player.getName(), heal, healCost);
-        case (2):
+        case (valid3):
             if(player.pay(forceCost)){
                 player.buff(force);
             }

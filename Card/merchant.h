@@ -10,6 +10,9 @@
 
 class Merchant : public Card{
 public:
+    const static int valid1= 0;
+    const static int valid2= 1;
+    const static int valid3= 2;
     const static int heal=1;
     const static int force=1;
     const static int healCost=5;
