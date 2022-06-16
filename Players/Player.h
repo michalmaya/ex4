@@ -27,6 +27,7 @@ public:
     bool pay (int amount);
     String getName () const;
     int getCoins() const;
+    String getGob() const;
     virtual void heal(int amount);
     virtual void addCoins (int amount);
     virtual int getAttackStrength () const;

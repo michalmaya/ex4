@@ -88,3 +88,7 @@ String Player::getName () const{
 int Player::getCoins() const{
     return m_coins;
 }
+
+String Player::getGob() const{
+    return m_job;
+}
