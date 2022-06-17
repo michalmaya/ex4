@@ -11,15 +11,11 @@
 
 class Battle : public Card{
 public:
-    Battle()=default;
+    Battle(String name="",int damage =0, int loot =0,int force =0, int gain=0);
     ~Battle()=default;
     Battle(Battle& other)=default;
     Battle& operator=(Battle& other)= default;
     void printCard() override;
     Player& playCard(Player& player) override;
 
-private:
-    int m_force;
-    int m_loot;
-    int m_damage;
 };
