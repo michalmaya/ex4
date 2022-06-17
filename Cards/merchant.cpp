@@ -4,12 +4,15 @@
 
 #include "merchant.h"
 
+Merchant::Merchant() {
+    Card("Merchant");
+}
 
 Player& Merchant :: playCard(Player& player){
     int input = 0;
     printMerchantInitialMessageForInteractiveEncounter(std::cout,player.getName(), player.getCoins());
     std::cin >> input;
-    if ((input != valid1) || (input != valid2)|| (input != valid3))) {
+    if ((input != valid1) || (input != valid2)|| (input != valid3)) {
         printInvalidInput();
         std::cin >> input;
     }

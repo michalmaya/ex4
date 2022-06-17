@@ -17,7 +17,7 @@ public:
     const static int force=1;
     const static int healCost=5;
     const static int forceCost=10;
-    Merchant()=default;
+    Merchant();
     ~Merchant()=default;
     Merchant(Merchant& other)=default;
     Merchant& operator=(Merchant& other)=default;
