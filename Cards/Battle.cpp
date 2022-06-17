@@ -19,3 +19,22 @@ void Battle::printCard(){
     printEndOfCardDetails(std::cout);
 }
 
+Player& Battle:: playCard(Player& player){
+    if (m_force< player.getAttackStrength()){
+        return win(player);
+    }
+    else{
+        return loss(player);
+    }
+}
+
+Player& Battle:: win(Player& player){
+    player.buff(m_gain);
+    player.addCoins(m_loot);
+    return player;
+}
+
+Player& Battle:: loss(Player& player){
+    player.damage(m_damage);
+    return player;
+}
