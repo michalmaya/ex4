@@ -4,8 +4,12 @@
 
 #include "Treasure.h"
 
+Treasure::Treasure() {
+    Card("Treasure", 0, 0, 0, 10);
+}
+
 Player& Treasure :: playCard(Player& player){
-    player.addCoins(coins);
+    player.addCoins(m_gain);
     printTreasureMessage();
     return player;
 }
