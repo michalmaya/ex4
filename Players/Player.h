@@ -32,6 +32,7 @@ public:
     virtual void addCoins (int amount);
     virtual int getAttackStrength () const;
     virtual void printInfo(ostream& os) const;
+    int getHP();
 
     friend ostream& operator<<(ostream& os, const Player& player);
 

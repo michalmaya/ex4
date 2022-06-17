@@ -4,9 +4,13 @@
 
 #include "Barfight.h"
 
+Barfight::Barfight() {
+    Card("Barfight", 10);
+}
+
 Player& Barfight:: playCard(Player& player){
     if (player.getGob()!="Fighter"){
-        player.damage(damge);
+        player.damage(m_damage);
         printBarfightMessage(false);
     }
     printBarfightMessage(true);

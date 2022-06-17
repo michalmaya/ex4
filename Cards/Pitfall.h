@@ -11,8 +11,7 @@
 
 class Pitfall : public Card{
 public:
-    const static int damage= 10;
-    Pitfall()=default;
+    Pitfall();
     ~Pitfall()=default;
     Pitfall(Pitfall& other)=default;
     Pitfall& operator=(Pitfall& other)= default;

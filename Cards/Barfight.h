@@ -11,10 +11,10 @@
 
 class Barfight : public Card{
 public:
-    const static int damge= 10;
-    Barfight()=default;
+    Barfight();
     ~Barfight()=default;
     Barfight(Barfight& other)=default;
     Barfight& operator=(Barfight& other)= default;
     Player& playCard(Player& player) override;
+
 };

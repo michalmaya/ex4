@@ -11,8 +11,7 @@
 
 class Treasure : public Card{
 public:
-    const static int coins= 10;
-    Treasure()=default;
+    Treasure();
     ~Treasure()=default;
     Treasure(Treasure& other)=default;
     Treasure& operator=(Treasure& other)= default;
