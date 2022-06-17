@@ -92,3 +92,7 @@ int Player::getCoins() const{
 String Player::getGob() const{
     return m_job;
 }
+
+int Player::getHP() {
+    return m_HP;
+}
