@@ -4,6 +4,8 @@
 
 #include "Vampire.h"
 
-void Vampire:: printCard(){
-
+Vampire::Vampire() {
+    Battle("Vampire", 10, 2, 10, 1);
 }
+
+

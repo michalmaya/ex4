@@ -7,13 +7,12 @@
 
 #endif //EX4_VAMPIRE_H
 #include "Card.h"
+#include "Battle.h"
 
-class Vampire : public Card{
+class Vampire : public Battle{
 public:
     Vampire();
     ~Vampire()=default;
     Vampire(Vampire& other)=default;
     Vampire& operator=(Vampire& other)= default;
-    void printCard() override;
-    Player& playCard(Player& player) override;
 };
