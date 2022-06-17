@@ -85,6 +85,9 @@
 		<Unit filename="C:/Users/shayr/Documents/GitHub/ex4/Exception.h">
 			<Option target="ex4"/>
 		</Unit>
+		<Unit filename="C:/Users/shayr/Documents/GitHub/ex4/Mtmchkin.cpp">
+			<Option target="ex4"/>
+		</Unit>
 		<Unit filename="C:/Users/shayr/Documents/GitHub/ex4/Mtmchkin.h">
 			<Option target="ex4"/>
 		</Unit>
@@ -113,12 +116,6 @@
 			<Option target="ex4"/>
 		</Unit>
 		<Unit filename="C:/Users/shayr/Documents/GitHub/ex4/minitests.cpp">
-			<Option target="ex4"/>
-		</Unit>
-		<Unit filename="C:/Users/shayr/Documents/GitHub/ex4/mtmchkin.cpp">
-			<Option target="ex4"/>
-		</Unit>
-		<Unit filename="C:/Users/shayr/Documents/GitHub/ex4/mtmchkin.h">
 			<Option target="ex4"/>
 		</Unit>
 		<Unit filename="C:/Users/shayr/Documents/GitHub/ex4/utilities.cpp">

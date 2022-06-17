@@ -128,6 +128,30 @@ ex4/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/build
 .PHONY : ex4/fast
 
+Mtmchkin.obj: Mtmchkin.cpp.obj
+.PHONY : Mtmchkin.obj
+
+# target to build an object file
+Mtmchkin.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Mtmchkin.cpp.obj
+.PHONY : Mtmchkin.cpp.obj
+
+Mtmchkin.i: Mtmchkin.cpp.i
+.PHONY : Mtmchkin.i
+
+# target to preprocess a source file
+Mtmchkin.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Mtmchkin.cpp.i
+.PHONY : Mtmchkin.cpp.i
+
+Mtmchkin.s: Mtmchkin.cpp.s
+.PHONY : Mtmchkin.s
+
+# target to generate assembly for a file
+Mtmchkin.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Mtmchkin.cpp.s
+.PHONY : Mtmchkin.cpp.s
+
 Players/Fighter.obj: Players/Fighter.cpp.obj
 .PHONY : Players/Fighter.obj
 
@@ -248,30 +272,6 @@ minitests.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/minitests.cpp.s
 .PHONY : minitests.cpp.s
 
-mtmchkin.obj: mtmchkin.cpp.obj
-.PHONY : mtmchkin.obj
-
-# target to build an object file
-mtmchkin.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/mtmchkin.cpp.obj
-.PHONY : mtmchkin.cpp.obj
-
-mtmchkin.i: mtmchkin.cpp.i
-.PHONY : mtmchkin.i
-
-# target to preprocess a source file
-mtmchkin.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/mtmchkin.cpp.i
-.PHONY : mtmchkin.cpp.i
-
-mtmchkin.s: mtmchkin.cpp.s
-.PHONY : mtmchkin.s
-
-# target to generate assembly for a file
-mtmchkin.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/mtmchkin.cpp.s
-.PHONY : mtmchkin.cpp.s
-
 utilities.obj: utilities.cpp.obj
 .PHONY : utilities.obj
 
@@ -305,6 +305,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... ex4
+	@echo ... Mtmchkin.obj
+	@echo ... Mtmchkin.i
+	@echo ... Mtmchkin.s
 	@echo ... Players/Fighter.obj
 	@echo ... Players/Fighter.i
 	@echo ... Players/Fighter.s
@@ -320,9 +323,6 @@ help:
 	@echo ... minitests.obj
 	@echo ... minitests.i
 	@echo ... minitests.s
-	@echo ... mtmchkin.obj
-	@echo ... mtmchkin.i
-	@echo ... mtmchkin.s
 	@echo ... utilities.obj
 	@echo ... utilities.i
 	@echo ... utilities.s

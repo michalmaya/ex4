@@ -158,20 +158,20 @@ CMakeFiles/ex4.dir/Players/Rogue.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex4.dir/Players/Rogue.cpp.s"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\shayr\Documents\GitHub\ex4\Players\Rogue.cpp -o CMakeFiles\ex4.dir\Players\Rogue.cpp.s
 
-CMakeFiles/ex4.dir/mtmchkin.cpp.obj: CMakeFiles/ex4.dir/flags.make
-CMakeFiles/ex4.dir/mtmchkin.cpp.obj: CMakeFiles/ex4.dir/includes_CXX.rsp
-CMakeFiles/ex4.dir/mtmchkin.cpp.obj: ../mtmchkin.cpp
-CMakeFiles/ex4.dir/mtmchkin.cpp.obj: CMakeFiles/ex4.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\shayr\Documents\GitHub\ex4\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ex4.dir/mtmchkin.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ex4.dir/mtmchkin.cpp.obj -MF CMakeFiles\ex4.dir\mtmchkin.cpp.obj.d -o CMakeFiles\ex4.dir\mtmchkin.cpp.obj -c C:\Users\shayr\Documents\GitHub\ex4\mtmchkin.cpp
+CMakeFiles/ex4.dir/Mtmchkin.cpp.obj: CMakeFiles/ex4.dir/flags.make
+CMakeFiles/ex4.dir/Mtmchkin.cpp.obj: CMakeFiles/ex4.dir/includes_CXX.rsp
+CMakeFiles/ex4.dir/Mtmchkin.cpp.obj: ../Mtmchkin.cpp
+CMakeFiles/ex4.dir/Mtmchkin.cpp.obj: CMakeFiles/ex4.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\shayr\Documents\GitHub\ex4\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ex4.dir/Mtmchkin.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ex4.dir/Mtmchkin.cpp.obj -MF CMakeFiles\ex4.dir\Mtmchkin.cpp.obj.d -o CMakeFiles\ex4.dir\Mtmchkin.cpp.obj -c C:\Users\shayr\Documents\GitHub\ex4\Mtmchkin.cpp
 
-CMakeFiles/ex4.dir/mtmchkin.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex4.dir/mtmchkin.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\shayr\Documents\GitHub\ex4\mtmchkin.cpp > CMakeFiles\ex4.dir\mtmchkin.cpp.i
+CMakeFiles/ex4.dir/Mtmchkin.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex4.dir/Mtmchkin.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\shayr\Documents\GitHub\ex4\Mtmchkin.cpp > CMakeFiles\ex4.dir\Mtmchkin.cpp.i
 
-CMakeFiles/ex4.dir/mtmchkin.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex4.dir/mtmchkin.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\shayr\Documents\GitHub\ex4\mtmchkin.cpp -o CMakeFiles\ex4.dir\mtmchkin.cpp.s
+CMakeFiles/ex4.dir/Mtmchkin.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex4.dir/Mtmchkin.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\shayr\Documents\GitHub\ex4\Mtmchkin.cpp -o CMakeFiles\ex4.dir\Mtmchkin.cpp.s
 
 # Object files for target ex4
 ex4_OBJECTS = \
@@ -181,7 +181,7 @@ ex4_OBJECTS = \
 "CMakeFiles/ex4.dir/Players/Player.cpp.obj" \
 "CMakeFiles/ex4.dir/Players/Fighter.cpp.obj" \
 "CMakeFiles/ex4.dir/Players/Rogue.cpp.obj" \
-"CMakeFiles/ex4.dir/mtmchkin.cpp.obj"
+"CMakeFiles/ex4.dir/Mtmchkin.cpp.obj"
 
 # External object files for target ex4
 ex4_EXTERNAL_OBJECTS =
@@ -192,7 +192,7 @@ ex4.exe: CMakeFiles/ex4.dir/Players/Wizard.cpp.obj
 ex4.exe: CMakeFiles/ex4.dir/Players/Player.cpp.obj
 ex4.exe: CMakeFiles/ex4.dir/Players/Fighter.cpp.obj
 ex4.exe: CMakeFiles/ex4.dir/Players/Rogue.cpp.obj
-ex4.exe: CMakeFiles/ex4.dir/mtmchkin.cpp.obj
+ex4.exe: CMakeFiles/ex4.dir/Mtmchkin.cpp.obj
 ex4.exe: CMakeFiles/ex4.dir/build.make
 ex4.exe: CMakeFiles/ex4.dir/linklibs.rsp
 ex4.exe: CMakeFiles/ex4.dir/objects1.rsp

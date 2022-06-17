@@ -19,7 +19,7 @@ public:
     Card()=default;
     virtual ~Card()=default;
     Card(Card& other)=default;
-    Card& operator=(Card& other)= default;
+    Card& operator=(const Card& other)= default;
     virtual void printCard();
     virtual Player& playCard(Player& player);
 
