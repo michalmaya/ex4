@@ -17,4 +17,5 @@ public:
     Barfight(Barfight& other)=default;
     Barfight& operator=(Barfight& other)= default;
     Player& playCard(Player& player) override;
+
 };

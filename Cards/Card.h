@@ -16,14 +16,18 @@ typedef std::ostream ostream;
 
 class Card{
 public:
-    Card()=default;
-    virtual ~Card()=default;
+    Card(String name="",int damage =0, int loot =0,int force =0, int gain=0);
+    virtual ~Card();
     Card(Card& other)=default;
     Card& operator=(Card& other)= default;
     virtual void printCard();
     virtual Player& playCard(Player& player);
 
 
-private:
+protected:
     String m_name;
+    int m_damage;
+    int m_loot;
+    int m_force;
+    int m_gain;
 };
