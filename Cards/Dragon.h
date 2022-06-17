@@ -5,15 +5,15 @@
 #ifndef EX4_DRAGON_H
 #define EX4_DRAGON_H
 
-#endif //EX4_DRAGON_H
-
 #include "Battle.h"
 
 class Dragon : public Battle{
+public:
     Dragon();
-    ~Dragon()=default;
+    ~Dragon() override =default;
     Dragon(Dragon& other)=default;
-    Dragon& operator=(Dragon& other)= default;
+    Dragon& operator=(const Dragon& other)= default;
     Player& loss(Player& player) override;
 };
 
+#endif //EX4_DRAGON_H

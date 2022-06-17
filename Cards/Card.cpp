@@ -13,3 +13,11 @@ void Card::printCard(){
     printEndOfCardDetails(std::cout);
 }
 
+int Card::getGains() const {
+    return m_gain;
+}
+
+int Card::getForce() const {
+    return m_force;
+}
+

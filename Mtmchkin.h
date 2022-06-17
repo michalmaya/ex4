@@ -4,6 +4,7 @@
 #include "string"
 #include "queue"
 #include "map"
+#include "fstream"
 
 #include "Players/Player.h"
 #include "Players/Rogue.h"
@@ -16,7 +17,7 @@
 #include "Cards/Dragon.h"
 #include "Cards/Fairy.h"
 #include "Cards/Goblin.h"
-#include "Cards/Merchant.h"
+#include "Cards/merchant.h"
 #include "Cards/Pitfall.h"
 #include "Cards/Treasure.h"
 
@@ -73,16 +74,18 @@ public:
 
 
 private:
-    std::queue<Player> m_Players;
-    std::queue<Card> m_deck;
+    std::queue<Player*> m_Players;
+    std::queue<Card*> m_deck;
     int m_currRound;
-    int m_numOfCards;
+    int m_numOfCards{};
     GameStatus m_status;
 };
 
 static void initializeCardsMap(std::map<String, CardsType>& m);
 
 static void initializeJobsMap(std::map<String, Jobs>& m);
+
+static bool isAllAlpha(const std::string& s);
 
 
 #endif /* MTMCHKIN_H_ */

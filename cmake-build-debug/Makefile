@@ -128,6 +128,246 @@ ex4/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/build
 .PHONY : ex4/fast
 
+Cards/Barfight.obj: Cards/Barfight.cpp.obj
+.PHONY : Cards/Barfight.obj
+
+# target to build an object file
+Cards/Barfight.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Cards/Barfight.cpp.obj
+.PHONY : Cards/Barfight.cpp.obj
+
+Cards/Barfight.i: Cards/Barfight.cpp.i
+.PHONY : Cards/Barfight.i
+
+# target to preprocess a source file
+Cards/Barfight.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Cards/Barfight.cpp.i
+.PHONY : Cards/Barfight.cpp.i
+
+Cards/Barfight.s: Cards/Barfight.cpp.s
+.PHONY : Cards/Barfight.s
+
+# target to generate assembly for a file
+Cards/Barfight.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Cards/Barfight.cpp.s
+.PHONY : Cards/Barfight.cpp.s
+
+Cards/Battle.obj: Cards/Battle.cpp.obj
+.PHONY : Cards/Battle.obj
+
+# target to build an object file
+Cards/Battle.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Cards/Battle.cpp.obj
+.PHONY : Cards/Battle.cpp.obj
+
+Cards/Battle.i: Cards/Battle.cpp.i
+.PHONY : Cards/Battle.i
+
+# target to preprocess a source file
+Cards/Battle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Cards/Battle.cpp.i
+.PHONY : Cards/Battle.cpp.i
+
+Cards/Battle.s: Cards/Battle.cpp.s
+.PHONY : Cards/Battle.s
+
+# target to generate assembly for a file
+Cards/Battle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Cards/Battle.cpp.s
+.PHONY : Cards/Battle.cpp.s
+
+Cards/Card.obj: Cards/Card.cpp.obj
+.PHONY : Cards/Card.obj
+
+# target to build an object file
+Cards/Card.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Cards/Card.cpp.obj
+.PHONY : Cards/Card.cpp.obj
+
+Cards/Card.i: Cards/Card.cpp.i
+.PHONY : Cards/Card.i
+
+# target to preprocess a source file
+Cards/Card.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Cards/Card.cpp.i
+.PHONY : Cards/Card.cpp.i
+
+Cards/Card.s: Cards/Card.cpp.s
+.PHONY : Cards/Card.s
+
+# target to generate assembly for a file
+Cards/Card.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Cards/Card.cpp.s
+.PHONY : Cards/Card.cpp.s
+
+Cards/Dragon.obj: Cards/Dragon.cpp.obj
+.PHONY : Cards/Dragon.obj
+
+# target to build an object file
+Cards/Dragon.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Cards/Dragon.cpp.obj
+.PHONY : Cards/Dragon.cpp.obj
+
+Cards/Dragon.i: Cards/Dragon.cpp.i
+.PHONY : Cards/Dragon.i
+
+# target to preprocess a source file
+Cards/Dragon.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Cards/Dragon.cpp.i
+.PHONY : Cards/Dragon.cpp.i
+
+Cards/Dragon.s: Cards/Dragon.cpp.s
+.PHONY : Cards/Dragon.s
+
+# target to generate assembly for a file
+Cards/Dragon.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Cards/Dragon.cpp.s
+.PHONY : Cards/Dragon.cpp.s
+
+Cards/Fairy.obj: Cards/Fairy.cpp.obj
+.PHONY : Cards/Fairy.obj
+
+# target to build an object file
+Cards/Fairy.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Cards/Fairy.cpp.obj
+.PHONY : Cards/Fairy.cpp.obj
+
+Cards/Fairy.i: Cards/Fairy.cpp.i
+.PHONY : Cards/Fairy.i
+
+# target to preprocess a source file
+Cards/Fairy.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Cards/Fairy.cpp.i
+.PHONY : Cards/Fairy.cpp.i
+
+Cards/Fairy.s: Cards/Fairy.cpp.s
+.PHONY : Cards/Fairy.s
+
+# target to generate assembly for a file
+Cards/Fairy.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Cards/Fairy.cpp.s
+.PHONY : Cards/Fairy.cpp.s
+
+Cards/Goblin.obj: Cards/Goblin.cpp.obj
+.PHONY : Cards/Goblin.obj
+
+# target to build an object file
+Cards/Goblin.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Cards/Goblin.cpp.obj
+.PHONY : Cards/Goblin.cpp.obj
+
+Cards/Goblin.i: Cards/Goblin.cpp.i
+.PHONY : Cards/Goblin.i
+
+# target to preprocess a source file
+Cards/Goblin.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Cards/Goblin.cpp.i
+.PHONY : Cards/Goblin.cpp.i
+
+Cards/Goblin.s: Cards/Goblin.cpp.s
+.PHONY : Cards/Goblin.s
+
+# target to generate assembly for a file
+Cards/Goblin.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Cards/Goblin.cpp.s
+.PHONY : Cards/Goblin.cpp.s
+
+Cards/Pitfall.obj: Cards/Pitfall.cpp.obj
+.PHONY : Cards/Pitfall.obj
+
+# target to build an object file
+Cards/Pitfall.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Cards/Pitfall.cpp.obj
+.PHONY : Cards/Pitfall.cpp.obj
+
+Cards/Pitfall.i: Cards/Pitfall.cpp.i
+.PHONY : Cards/Pitfall.i
+
+# target to preprocess a source file
+Cards/Pitfall.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Cards/Pitfall.cpp.i
+.PHONY : Cards/Pitfall.cpp.i
+
+Cards/Pitfall.s: Cards/Pitfall.cpp.s
+.PHONY : Cards/Pitfall.s
+
+# target to generate assembly for a file
+Cards/Pitfall.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Cards/Pitfall.cpp.s
+.PHONY : Cards/Pitfall.cpp.s
+
+Cards/Treasure.obj: Cards/Treasure.cpp.obj
+.PHONY : Cards/Treasure.obj
+
+# target to build an object file
+Cards/Treasure.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Cards/Treasure.cpp.obj
+.PHONY : Cards/Treasure.cpp.obj
+
+Cards/Treasure.i: Cards/Treasure.cpp.i
+.PHONY : Cards/Treasure.i
+
+# target to preprocess a source file
+Cards/Treasure.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Cards/Treasure.cpp.i
+.PHONY : Cards/Treasure.cpp.i
+
+Cards/Treasure.s: Cards/Treasure.cpp.s
+.PHONY : Cards/Treasure.s
+
+# target to generate assembly for a file
+Cards/Treasure.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Cards/Treasure.cpp.s
+.PHONY : Cards/Treasure.cpp.s
+
+Cards/Vampire.obj: Cards/Vampire.cpp.obj
+.PHONY : Cards/Vampire.obj
+
+# target to build an object file
+Cards/Vampire.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Cards/Vampire.cpp.obj
+.PHONY : Cards/Vampire.cpp.obj
+
+Cards/Vampire.i: Cards/Vampire.cpp.i
+.PHONY : Cards/Vampire.i
+
+# target to preprocess a source file
+Cards/Vampire.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Cards/Vampire.cpp.i
+.PHONY : Cards/Vampire.cpp.i
+
+Cards/Vampire.s: Cards/Vampire.cpp.s
+.PHONY : Cards/Vampire.s
+
+# target to generate assembly for a file
+Cards/Vampire.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Cards/Vampire.cpp.s
+.PHONY : Cards/Vampire.cpp.s
+
+Cards/merchant.obj: Cards/merchant.cpp.obj
+.PHONY : Cards/merchant.obj
+
+# target to build an object file
+Cards/merchant.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Cards/merchant.cpp.obj
+.PHONY : Cards/merchant.cpp.obj
+
+Cards/merchant.i: Cards/merchant.cpp.i
+.PHONY : Cards/merchant.i
+
+# target to preprocess a source file
+Cards/merchant.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Cards/merchant.cpp.i
+.PHONY : Cards/merchant.cpp.i
+
+Cards/merchant.s: Cards/merchant.cpp.s
+.PHONY : Cards/merchant.s
+
+# target to generate assembly for a file
+Cards/merchant.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ex4.dir\build.make CMakeFiles/ex4.dir/Cards/merchant.cpp.s
+.PHONY : Cards/merchant.cpp.s
+
 Mtmchkin.obj: Mtmchkin.cpp.obj
 .PHONY : Mtmchkin.obj
 
@@ -305,6 +545,36 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... ex4
+	@echo ... Cards/Barfight.obj
+	@echo ... Cards/Barfight.i
+	@echo ... Cards/Barfight.s
+	@echo ... Cards/Battle.obj
+	@echo ... Cards/Battle.i
+	@echo ... Cards/Battle.s
+	@echo ... Cards/Card.obj
+	@echo ... Cards/Card.i
+	@echo ... Cards/Card.s
+	@echo ... Cards/Dragon.obj
+	@echo ... Cards/Dragon.i
+	@echo ... Cards/Dragon.s
+	@echo ... Cards/Fairy.obj
+	@echo ... Cards/Fairy.i
+	@echo ... Cards/Fairy.s
+	@echo ... Cards/Goblin.obj
+	@echo ... Cards/Goblin.i
+	@echo ... Cards/Goblin.s
+	@echo ... Cards/Pitfall.obj
+	@echo ... Cards/Pitfall.i
+	@echo ... Cards/Pitfall.s
+	@echo ... Cards/Treasure.obj
+	@echo ... Cards/Treasure.i
+	@echo ... Cards/Treasure.s
+	@echo ... Cards/Vampire.obj
+	@echo ... Cards/Vampire.i
+	@echo ... Cards/Vampire.s
+	@echo ... Cards/merchant.obj
+	@echo ... Cards/merchant.i
+	@echo ... Cards/merchant.s
 	@echo ... Mtmchkin.obj
 	@echo ... Mtmchkin.i
 	@echo ... Mtmchkin.s

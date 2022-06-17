@@ -16,7 +16,7 @@ typedef std::ostream ostream;
 class Player {
 public:
     explicit Player (const char* name,const char* job, int maxHP=100, int force=5);
-    virtual ~Player () = 0 {} ;
+    virtual ~Player () {} ;
     Player (const Player& player) = default;
     Player& operator= (const Player& other) = default;
     void levelUp();
@@ -27,12 +27,12 @@ public:
     bool pay (int amount);
     String getName () const;
     int getCoins() const;
-    String getGob() const;
+    String getJob() const;
     virtual void heal(int amount);
     virtual void addCoins (int amount);
     virtual int getAttackStrength () const;
-    virtual void printInfo(ostream& os) const;
-    int getHP();
+    void printInfo(ostream& os) const;
+    int getHP() const;
 
     friend ostream& operator<<(ostream& os, const Player& player);
 

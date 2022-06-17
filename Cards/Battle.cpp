@@ -4,9 +4,8 @@
 
 #include "Battle.h"
 
-Battle:: Battle(String name,int damage, int loot,int force, int gain){
-    Card(name, damage, loot, force, gain);
-}
+Battle:: Battle(String name,int damage, int loot,int force, int gain) : Card(name, damage, loot, force, gain)
+{};
 
 
 void Battle::printCard(){
@@ -20,7 +19,7 @@ void Battle::printCard(){
 }
 
 Player& Battle:: playCard(Player& player){
-    if (m_force< player.getAttackStrength()){
+    if (m_force < player.getAttackStrength()){
         return win(player);
     }
     else{

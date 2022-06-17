@@ -4,35 +4,60 @@
 
 #include "merchant.h"
 
-Merchant::Merchant() {
-    Card("Merchant");
-}
+Merchant::Merchant() :
+    Card("Merchant",0,0,FORCE_AMOUNT,HEAL_AMOUNT),
+    m_cost(0)
+{}
 
 Player& Merchant :: playCard(Player& player){
-    int input = 0;
+    int input = -1;
     printMerchantInitialMessageForInteractiveEncounter(std::cout,player.getName(), player.getCoins());
-    std::cin >> input;
-    if ((input != valid1) || (input != valid2)|| (input != valid3)) {
-        printInvalidInput();
-        std::cin >> input;
+
+    std::vector<Actions> acts = {Actions::DoNothing,Actions::BuyHeal,Actions::BuyForce};
+    char line[256];
+    std::cin.getline(line,sizeof (line));
+    try {
+        input = std::stoi(line);
     }
-    switch (input) {
-        case (valid2):
-            if(player.pay(healCost)){
-                player.heal(heal);
+    catch ( ... ){}
+    while (input < 0 || input >= acts.size())
+    {
+        printInvalidInput();
+        std::cin.getline(line,sizeof (line));
+        try {
+            input = std::stoi(line);
+        }
+        catch ( ... )
+        {
+            continue;
+        }
+        if(input < 0 || input >= acts.size())
+            printInvalidInput();
+    }
+    Actions currAction = acts[input];
+
+    switch (currAction) {
+        case Actions::DoNothing:
+            break;
+        case Actions::BuyHeal:
+            m_cost = HEAL_COST;
+            if(player.pay(m_cost)){
+                player.heal(getGains());
             }
             else {
                 printMerchantInsufficientCoins(std::cout);
             }
-            printMerchantSummary(std::cout, player.getName(), heal, healCost);
-        case (valid3):
-            if(player.pay(forceCost)){
-                player.buff(force);
+            break;
+        case Actions::BuyForce:
+            m_cost = FORCE_COST;
+            if(player.pay(m_cost)){
+                player.buff(getForce());
             }
-           else {
+            else {
                 printMerchantInsufficientCoins(std::cout);
-           }
-           printMerchantSummary(std::cout, player.getName(), force, forceCost);
+            }
+            break;
     }
+    printMerchantSummary(std::cout, player.getName(), input, m_cost);
     return player;
 }

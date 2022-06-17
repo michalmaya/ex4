@@ -5,16 +5,15 @@
 #ifndef EX4_BARFIGHT_H
 #define EX4_BARFIGHT_H
 
-#endif //EX4_BARFIGHT_H
-
 #include "Card.h"
 
 class Barfight : public Card{
 public:
     Barfight();
-    ~Barfight()=default;
+    ~Barfight() override =default;
     Barfight(Barfight& other)=default;
-    Barfight& operator=(Barfight& other)= default;
+    Barfight& operator=(const Barfight& other)= default;
     Player& playCard(Player& player) override;
-
 };
+
+#endif //EX4_BARFIGHT_H

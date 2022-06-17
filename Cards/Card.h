@@ -5,7 +5,6 @@
 #ifndef EX4_CARD_H
 #define EX4_CARD_H
 
-#endif //EX4_CARD_
 #include "Players/Player.h"
 #include "utilities.h"
 #include "string.h"
@@ -16,12 +15,14 @@ typedef std::ostream ostream;
 
 class Card{
 public:
-    Card(String name="",int damage =0, int loot =0,int force =0, int gain=0);
-    virtual ~Card();
-    Card(Card& other)=default;
+    explicit Card(String name,int damage =0, int loot =0,int force =0, int gain=0);
+    virtual ~Card() = default;
+    Card(const Card& other)=default;
     Card& operator=(const Card& other)= default;
     virtual void printCard();
-    virtual Player& playCard(Player& player);
+    virtual Player& playCard(Player& player) =0;
+    int getGains() const;
+    int getForce() const;
 
 
 protected:
@@ -31,3 +32,5 @@ protected:
     int m_force;
     int m_gain;
 };
+
+#endif //EX4_CARD_H

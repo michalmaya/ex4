@@ -4,12 +4,11 @@
 
 #include "Barfight.h"
 
-Barfight::Barfight() {
-    Card("Barfight", 10);
-}
+Barfight::Barfight() : Card("Barfight", 10)
+{};
 
 Player& Barfight:: playCard(Player& player){
-    if (player.getGob()!="Fighter"){
+    if (player.getJob() != "Fighter"){
         player.damage(m_damage);
         printBarfightMessage(false);
     }

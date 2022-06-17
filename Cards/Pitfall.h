@@ -5,15 +5,15 @@
 #ifndef EX4_PITFALL_H
 #define EX4_PITFALL_H
 
-#endif //EX4_PITFALL_H
-
 #include "Card.h"
 
 class Pitfall : public Card{
 public:
     Pitfall();
-    ~Pitfall()=default;
+    ~Pitfall() override =default;
     Pitfall(Pitfall& other)=default;
-    Pitfall& operator=(Pitfall& other)= default;
+    Pitfall& operator=(const Pitfall& other)= default;
     Player& playCard(Player& player) override;
 };
+
+#endif //EX4_PITFALL_H

@@ -4,12 +4,11 @@
 
 #include "Pitfall.h"
 
-Pitfall::Pitfall() {
-    Card("PItfall", 10);
-}
+Pitfall::Pitfall() : Card("PItfall", 10)
+{};
 
 Player& Pitfall:: playCard(Player& player){
-    if (player.getGob()!= "Rogue"){
+    if (player.getJob() != "Rogue"){
         player.damage(m_damage);
         printPitfallMessage(false);
     }

@@ -8,6 +8,16 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/shayr/Documents/GitHub/ex4/Cards/Barfight.cpp" "CMakeFiles/ex4.dir/Cards/Barfight.cpp.obj" "gcc" "CMakeFiles/ex4.dir/Cards/Barfight.cpp.obj.d"
+  "C:/Users/shayr/Documents/GitHub/ex4/Cards/Battle.cpp" "CMakeFiles/ex4.dir/Cards/Battle.cpp.obj" "gcc" "CMakeFiles/ex4.dir/Cards/Battle.cpp.obj.d"
+  "C:/Users/shayr/Documents/GitHub/ex4/Cards/Card.cpp" "CMakeFiles/ex4.dir/Cards/Card.cpp.obj" "gcc" "CMakeFiles/ex4.dir/Cards/Card.cpp.obj.d"
+  "C:/Users/shayr/Documents/GitHub/ex4/Cards/Dragon.cpp" "CMakeFiles/ex4.dir/Cards/Dragon.cpp.obj" "gcc" "CMakeFiles/ex4.dir/Cards/Dragon.cpp.obj.d"
+  "C:/Users/shayr/Documents/GitHub/ex4/Cards/Fairy.cpp" "CMakeFiles/ex4.dir/Cards/Fairy.cpp.obj" "gcc" "CMakeFiles/ex4.dir/Cards/Fairy.cpp.obj.d"
+  "C:/Users/shayr/Documents/GitHub/ex4/Cards/Goblin.cpp" "CMakeFiles/ex4.dir/Cards/Goblin.cpp.obj" "gcc" "CMakeFiles/ex4.dir/Cards/Goblin.cpp.obj.d"
+  "C:/Users/shayr/Documents/GitHub/ex4/Cards/Pitfall.cpp" "CMakeFiles/ex4.dir/Cards/Pitfall.cpp.obj" "gcc" "CMakeFiles/ex4.dir/Cards/Pitfall.cpp.obj.d"
+  "C:/Users/shayr/Documents/GitHub/ex4/Cards/Treasure.cpp" "CMakeFiles/ex4.dir/Cards/Treasure.cpp.obj" "gcc" "CMakeFiles/ex4.dir/Cards/Treasure.cpp.obj.d"
+  "C:/Users/shayr/Documents/GitHub/ex4/Cards/Vampire.cpp" "CMakeFiles/ex4.dir/Cards/Vampire.cpp.obj" "gcc" "CMakeFiles/ex4.dir/Cards/Vampire.cpp.obj.d"
+  "C:/Users/shayr/Documents/GitHub/ex4/Cards/merchant.cpp" "CMakeFiles/ex4.dir/Cards/merchant.cpp.obj" "gcc" "CMakeFiles/ex4.dir/Cards/merchant.cpp.obj.d"
   "C:/Users/shayr/Documents/GitHub/ex4/Mtmchkin.cpp" "CMakeFiles/ex4.dir/Mtmchkin.cpp.obj" "gcc" "CMakeFiles/ex4.dir/Mtmchkin.cpp.obj.d"
   "C:/Users/shayr/Documents/GitHub/ex4/Players/Fighter.cpp" "CMakeFiles/ex4.dir/Players/Fighter.cpp.obj" "gcc" "CMakeFiles/ex4.dir/Players/Fighter.cpp.obj.d"
   "C:/Users/shayr/Documents/GitHub/ex4/Players/Player.cpp" "CMakeFiles/ex4.dir/Players/Player.cpp.obj" "gcc" "CMakeFiles/ex4.dir/Players/Player.cpp.obj.d"

@@ -5,21 +5,27 @@
 #ifndef EX4_MERCHANT_H
 #define EX4_MERCHANT_H
 
-#endif //EX4_MERCHANT_H
 #include "Card.h"
+#include "vector"
+#include "fstream"
+#include "string"
+
+#define HEAL_COST 5
+#define FORCE_COST 10
+#define HEAL_AMOUNT 1
+#define FORCE_AMOUNT 1
+
+enum class Actions{DoNothing, BuyHeal, BuyForce};
 
 class Merchant : public Card{
 public:
-    const static int valid1= 0;
-    const static int valid2= 1;
-    const static int valid3= 2;
-    const static int heal=1;
-    const static int force=1;
-    const static int healCost=5;
-    const static int forceCost=10;
     Merchant();
-    ~Merchant()=default;
+    ~Merchant() override =default;
     Merchant(Merchant& other)=default;
-    Merchant& operator=(Merchant& other)=default;
+    Merchant& operator=(const Merchant& other)=default;
     Player& playCard(Player& player) override;
+private:
+    int m_cost;
 };
+
+#endif //EX4_MERCHANT_H

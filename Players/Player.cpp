@@ -89,10 +89,10 @@ int Player::getCoins() const{
     return m_coins;
 }
 
-String Player::getGob() const{
+String Player::getJob() const{
     return m_job;
 }
 
-int Player::getHP() {
+int Player::getHP() const {
     return m_HP;
 }

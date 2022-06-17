@@ -7,6 +7,7 @@ include_directories(.)
 
 add_executable(ex4
         Mtmchkin.h
+        Mtmchkin.cpp
         minitests.cpp
         utilities.cpp
         utilities.h
@@ -14,4 +15,28 @@ add_executable(ex4
         Players/Wizard.cpp
         Players/Wizard.h
         Players/Player.cpp
-        Players/Player.h Players/Fighter.cpp Players/Fighter.h Players/Rogue.cpp Players/Rogue.h minitests.cpp Mtmchkin.cpp)
+        Players/Player.h 
+        Players/Fighter.cpp 
+        Players/Fighter.h 
+        Players/Rogue.cpp 
+        Players/Rogue.h
+        Cards/Barfight.cpp
+        Cards/Barfight.h
+        Cards/Battle.cpp
+        Cards/Battle.h
+        Cards/Card.cpp
+        Cards/Card.h
+        Cards/Dragon.cpp
+        Cards/Dragon.h
+        Cards/Fairy.cpp
+        Cards/Fairy.h
+        Cards/Goblin.cpp
+        Cards/Goblin.h
+        Cards/merchant.cpp
+        Cards/merchant.h
+        Cards/Pitfall.cpp
+        Cards/Pitfall.h
+        Cards/Treasure.cpp
+        Cards/Treasure.h
+        Cards/Vampire.cpp
+        Cards/Vampire.h)

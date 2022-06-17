@@ -4,6 +4,5 @@
 
 #include "Goblin.h"
 
-Goblin::Goblin() {
-    Battle("Goblin", 10, 2, 6, 1);
-}
+Goblin::Goblin() : Battle("Goblin", 10, 2, 6, 1)
+{};
