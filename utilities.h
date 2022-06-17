@@ -31,7 +31,7 @@
 void printPlayerDetails(std::ostream &os, const std::string &name, const std::string &job, int level, int force, int HP, int coins);
 
 /* ---------------------------------------------------------------------------------------------- */
-// ----------------------------        Print functions for Card class         --------------------------
+// ----------------------------        Print functions for Cards class         --------------------------
 
 /*
  * Prints the details of a general card:
