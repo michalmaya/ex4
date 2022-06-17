@@ -11,8 +11,7 @@
 
 class Fairy : public Card{
 public:
-    const static int heal= 10;
-    Fairy()= default;
+    Fairy();
     ~Fairy()= default;
     Fairy(Fairy& other)=default;
     Fairy& operator=(Fairy& other)=default;
