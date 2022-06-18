@@ -21,3 +21,16 @@ int Card::getForce() const {
     return m_force;
 }
 
+int Card::getDamage() const {
+    return m_damage;
+}
+
+int Card::getLoot() const {
+    return m_loot;
+}
+
+String Card::getName() const {
+    return m_name;
+}
+
+

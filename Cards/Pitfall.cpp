@@ -9,7 +9,7 @@ Pitfall::Pitfall() : Card("PItfall", 10)
 
 Player& Pitfall:: playCard(Player& player){
     if (player.getJob() != "Rogue"){
-        player.damage(m_damage);
+        player.damage(getDamage());
         printPitfallMessage(false);
     }
     printPitfallMessage(true);

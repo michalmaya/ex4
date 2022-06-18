@@ -23,9 +23,12 @@ public:
     virtual Player& playCard(Player& player) =0;
     int getGains() const;
     int getForce() const;
+    int getDamage() const;
+    int getLoot() const;
+    String getName() const;
 
 
-protected:
+private:
     String m_name;
     int m_damage;
     int m_loot;

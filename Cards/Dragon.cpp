@@ -10,6 +10,6 @@ Dragon::Dragon() : Battle("Dragon", 0, 1000, 25, 1)
 
 Player& Dragon:: loss(Player& player){
     player.damage(player.getHP());
-    printLossBattle(player.getName(), m_name);
+    printLossBattle(player.getName(), getName());
     return player;
 }

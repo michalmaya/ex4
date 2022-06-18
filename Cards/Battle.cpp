@@ -10,16 +10,16 @@ Battle:: Battle(String name,int damage, int loot,int force, int gain) : Card(nam
 
 void Battle::printCard(){
     bool isDragon= false;
-    if (m_name=="Dragon"){
+    if (getName() == "Dragon"){
         isDragon= true;
     }
-    printCardDetails(std::cout, m_name);
-    printMonsterDetails(std::cout, m_force, m_damage, m_loot, isDragon);
+    printCardDetails(std::cout, getName());
+    printMonsterDetails(std::cout, getForce(), getDamage(), getLoot(), isDragon);
     printEndOfCardDetails(std::cout);
 }
 
 Player& Battle:: playCard(Player& player){
-    if (m_force < player.getAttackStrength()){
+    if (getForce() < player.getAttackStrength()){
         return win(player);
     }
     else{
@@ -28,12 +28,12 @@ Player& Battle:: playCard(Player& player){
 }
 
 Player& Battle:: win(Player& player){
-    player.buff(m_gain);
-    player.addCoins(m_loot);
+    player.buff(getGains());
+    player.addCoins(getLoot());
     return player;
 }
 
 Player& Battle:: loss(Player& player){
-    player.damage(m_damage);
+    player.damage(getDamage());
     return player;
 }
