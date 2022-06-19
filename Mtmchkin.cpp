@@ -193,11 +193,13 @@ void Mtmchkin::printLeaderBoard() const {
 }
 
 bool Mtmchkin::isGameOver() const {
-    return false;
+    if(m_status == GameStatus::MidGame)
+        return false;
+    return true;
 }
 
 int Mtmchkin::getNumberOfRounds() const {
-    return 0;
+    return m_currRound;
 }
 
 void pushCard(std::queue<Card*>& q, Card* card)
