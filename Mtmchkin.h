@@ -88,7 +88,7 @@ static void initializeJobsMap(std::map<String, Jobs>& m);
 
 static bool isAllAlpha(const std::string& s);
 
-static void pushCard(std::queue<Card*> q, Card* card);
+static void pushCard(std::queue<Card*>& q, Card* card);
 
 
 #endif /* MTMCHKIN_H_ */
