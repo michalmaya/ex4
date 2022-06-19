@@ -74,6 +74,10 @@ public:
     */
     int getNumberOfRounds() const;
 
+    void makeLeaderBoard();
+
+    void updateLeaderBoard();
+
 
 
 private:
@@ -83,8 +87,9 @@ private:
     int m_numOfCards;
     GameStatus m_status;
     int m_numOfPlayers;
-    std::queue<Player*> m_winners;
-    std::stack<Player*> m_losers;
+    Player* m_leadBoard;
+    Player* m_startleadboard;
+    Player* m_endLeadBoard;
 };
 
 static void initializeCardsMap(std::map<String, CardsType>& m);

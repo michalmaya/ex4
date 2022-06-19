@@ -188,6 +188,7 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
         if(players > 0)
             printInsertPlayerMessage();
     }
+    makeLeaderBoard();
 
 }
 
@@ -200,12 +201,7 @@ void Mtmchkin::playRound() {
             m_deck.front()->playCard(*m_Players.front());
             m_deck.push(m_deck.front());
             m_deck.pop();
-            if(m_Players.front()->isKnockedOut()){
-                m_losers.push(m_Players.front());
-            }
-            else if(m_Players.front()->isPlayerInGame()){
-                m_winners.push(m_Players.front());
-            }
+
         }
         m_Players.push(m_Players.front());
         m_Players.pop();
@@ -213,9 +209,25 @@ void Mtmchkin::playRound() {
 
 }
 
+void Mtmchkin::makeLeaderBoard(){
+    m_leadBoard= new Player[m_numOfPlayers];
+    for (int i=0; i<m_numOfPlayers; i++){
+        m_leadBoard[i]=m_Players.front();
+        m_Players.push(m_Players.front());
+        m_Players.pop();
+    }
+}
+
 void Mtmchkin::printLeaderBoard() const {
 
 }
+
+/*            if(m_Players.front()->isKnockedOut()){
+                m_losers.push(m_Players.front());
+            }
+            else if(m_Players.front()->isPlayerInGame()){
+                m_winners.push(m_Players.front());
+            }*/
 
 bool Mtmchkin::isGameOver() const {
     if(m_status == GameStatus::MidGame)

@@ -15,7 +15,7 @@ typedef std::ostream ostream;
 
 class Player {
 public:
-    explicit Player (const char* name,const char* job, int maxHP=100, int force=5);
+    explicit Player (const char* name ="",const char* job = "", int maxHP=100, int force=5);
     virtual ~Player () {} ;
     Player (const Player& player) = default;
     Player& operator= (const Player& other) = default;
