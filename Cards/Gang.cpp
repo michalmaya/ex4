@@ -1,7 +1,3 @@
-//
-// Created by shayr on 19/06/2022.
-//
-
 #include "Gang.h"
 
 Gang::Gang() :
