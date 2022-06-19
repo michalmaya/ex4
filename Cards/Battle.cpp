@@ -4,7 +4,9 @@
 
 #include "Battle.h"
 
-Battle:: Battle(String name,int damage, int loot,int force, int gain) : Card(name, damage, loot, force, gain)
+#include <utility>
+
+Battle:: Battle(String name,int damage, int loot,int force) : Card(std::move(name), damage, loot, force)
 {};
 
 

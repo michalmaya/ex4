@@ -80,7 +80,7 @@ private:
     std::queue<Player*> m_Players;
     std::queue<Card*> m_deck;
     int m_currRound;
-    int m_numOfCards{};
+    int m_numOfCards;
     GameStatus m_status;
     int m_numOfPlayers;
     std::queue<Player*> m_winners;
@@ -93,7 +93,7 @@ static void initializeJobsMap(std::map<String, Jobs>& m);
 
 static bool isAllAlpha(const std::string& s);
 
-static void pushCard(std::queue<Card*> q, Card* card);
+static void pushCard(std::queue<Card*> &q, Card* card);
 
 
 #endif /* MTMCHKIN_H_ */
