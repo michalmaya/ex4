@@ -4,7 +4,7 @@
 
 #include "Battle.h"
 
-Battle:: Battle(String name,int damage, int loot,int force, int gain) : Card(name, damage, loot, force, gain)
+Battle:: Battle(String name,int damage, int loot,int force) : Card(name, damage, loot, force)
 {};
 
 
@@ -28,7 +28,7 @@ Player& Battle:: playCard(Player& player){
 }
 
 Player& Battle:: win(Player& player){
-    player.buff(m_gain);
+    player.levelUp();
     player.addCoins(m_loot);
     return player;
 }

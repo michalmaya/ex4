@@ -79,6 +79,7 @@ private:
     int m_currRound;
     int m_numOfCards{};
     GameStatus m_status;
+    int m_numOfPlayers;
 };
 
 static void initializeCardsMap(std::map<String, CardsType>& m);
@@ -86,6 +87,8 @@ static void initializeCardsMap(std::map<String, CardsType>& m);
 static void initializeJobsMap(std::map<String, Jobs>& m);
 
 static bool isAllAlpha(const std::string& s);
+
+
 
 
 #endif /* MTMCHKIN_H_ */

@@ -15,7 +15,8 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
     m_Players(std::queue<Player*>()),
     m_deck(std::queue<Card*>()),
     m_status(GameStatus::MidGame),
-    m_currRound(0)
+    m_currRound(0),
+    m_numOfPlayers(0)
 {
     std::ifstream source("..\\" + fileName);
     if(!source) {
@@ -92,6 +93,7 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
         }
     }
 
+    m_numOfPlayers=players;
     std::string name, job;
 
     printInsertPlayerMessage();
@@ -167,4 +169,21 @@ bool isAllAlpha(const std::string& s)
             return false;
     }
     return true;
+}
+
+
+void Mtmchkin:: playRound(){
+    m_currRound++;
+    printRoundStartMessage(m_currRound);
+    for (int i=0; i<m_numOfPlayers; i++){
+        String curPlayerName= m_Players.front()->getName();
+        if(m_Players.front()->isPlayerInGame()){
+            m_deck.front()->playCard(*m_Players.front());
+            m_deck.push(m_deck.front());
+            m_deck.pop();
+        }
+        m_Players.push(m_Players.front());
+        m_Players.pop();
+    }
+
 }
