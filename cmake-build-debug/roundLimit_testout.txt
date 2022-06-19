@@ -1,0 +1,704 @@
+Welcome to the world of MtmChkin!!!
+Please enter team size: (2-6)
+Please insert the player name and class: 
+Please insert the player name and class: 
+
+-------------------------------------------
+Start of round 1:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 2:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 3:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 4:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 5:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 6:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 7:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 8:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 9:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 10:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 11:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 12:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 13:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 14:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 15:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 16:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 17:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 18:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 19:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 20:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 21:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 22:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 23:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 24:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 25:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 26:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 27:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 28:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 29:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 30:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 31:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 32:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 33:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 34:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 35:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 36:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 37:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 38:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 39:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 40:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 41:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 42:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 43:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 44:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 45:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 46:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 47:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 48:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 49:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 50:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 51:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 52:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 53:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 54:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 55:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 56:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 57:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 58:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 59:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 60:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 61:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 62:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 63:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 64:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 65:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 66:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 67:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 68:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 69:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 70:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 71:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 72:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 73:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 74:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 75:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 76:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 77:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 78:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 79:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 80:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 81:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 82:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 83:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 84:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 85:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 86:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 87:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 88:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 89:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 90:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 91:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 92:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 93:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 94:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 95:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 96:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 97:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 98:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 99:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.
+
+-------------------------------------------
+Start of round 100:
+
+Fairies like wizards, you've gained 10 health points.
+Nothing happened.
+Nothing happened.

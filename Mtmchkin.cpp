@@ -30,73 +30,75 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
     initializeJobsMap(jobsMap);
 
     char line[256];
-    int lineCounter = 0;
+    int lineCounter = 1;
     bool isGang = false;
     Card* tempCard;
     Gang* tempGang;
     while (source.getline(line,sizeof (line))) {
         auto cardsIt = cardsMap.find(line);
         bool validCard = true;
-        switch (cardsIt->second) {
-            case CardsType::Goblin:
-                tempCard = new Goblin();
-                break;
-            case CardsType::Vampire:
-                tempCard = new Vampire();
-                break;
-            case CardsType::Dragon:
-                tempCard = new Dragon();
-                break;
-            case CardsType::Barfight:
-                if (isGang) {
-                    validCard = false;
+        if(cardsIt != cardsMap.end()) {
+            switch (cardsIt->second) {
+                case CardsType::Goblin:
+                    tempCard = new Goblin();
                     break;
-                }
-                tempCard = new Barfight();
-                break;
-            case CardsType::Fairy:
-                if (isGang) {
-                    validCard = false;
+                case CardsType::Vampire:
+                    tempCard = new Vampire();
                     break;
-                }
-                tempCard = new Fairy();
-                break;
-            case CardsType::Treasure:
-                if (isGang) {
-                    validCard = false;
+                case CardsType::Dragon:
+                    tempCard = new Dragon();
                     break;
-                }
-                tempCard = new Treasure();
-                break;
-            case CardsType::Pitfall:
-                if (isGang) {
-                    validCard = false;
+                case CardsType::Barfight:
+                    if (isGang) {
+                        validCard = false;
+                        break;
+                    }
+                    tempCard = new Barfight();
                     break;
-                }
-                tempCard = new Pitfall();
-                break;
-            case CardsType::Merchant:
-                if (isGang) {
-                    validCard = false;
+                case CardsType::Fairy:
+                    if (isGang) {
+                        validCard = false;
+                        break;
+                    }
+                    tempCard = new Fairy();
                     break;
-                }
-                tempCard = new Merchant();
-                break;
-            case CardsType::Gang:
-                if (isGang) {
-                    validCard = false;
+                case CardsType::Treasure:
+                    if (isGang) {
+                        validCard = false;
+                        break;
+                    }
+                    tempCard = new Treasure();
                     break;
-                }
-                tempGang = new Gang();
-                isGang = true;
-                break;
-            case CardsType::EndGang:
-                isGang = false;
-                tempCard = tempGang;
-                break;
-            default:
-                validCard = false;
+                case CardsType::Pitfall:
+                    if (isGang) {
+                        validCard = false;
+                        break;
+                    }
+                    tempCard = new Pitfall();
+                    break;
+                case CardsType::Merchant:
+                    if (isGang) {
+                        validCard = false;
+                        break;
+                    }
+                    tempCard = new Merchant();
+                    break;
+                case CardsType::Gang:
+                    if (isGang) {
+                        validCard = false;
+                        break;
+                    }
+                    tempGang = new Gang();
+                    isGang = true;
+                    break;
+                case CardsType::EndGang:
+                    isGang = false;
+                    tempCard = tempGang;
+                    break;
+            }
         }
+        else
+            validCard = false;
 
         if (!validCard)
             throw DeckFileFormatError(lineCounter);
@@ -162,27 +164,31 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
         }
 
         auto jobIt = jobsMap.find(job);
-        switch (jobIt->second) {
-            case Jobs::Wizard:
-                m_Players.push(new Wizard(name.c_str()));
-                players--;
-                break;
-            case Jobs::Rogue:
-                m_Players.push(new Rogue(name.c_str()));
-                players--;
-                break;
-            case Jobs::Fighter:
-                m_Players.push(new Fighter(name.c_str()));
-                players--;
-                break;
-            default:
-                printInvalidClass();
-                continue;
+        if(jobIt != jobsMap.end()) {
+            switch (jobIt->second) {
+                case Jobs::Wizard:
+                    m_Players.push(new Wizard(name.c_str()));
+                    players--;
+                    break;
+                case Jobs::Rogue:
+                    m_Players.push(new Rogue(name.c_str()));
+                    players--;
+                    break;
+                case Jobs::Fighter:
+                    m_Players.push(new Fighter(name.c_str()));
+                    players--;
+                    break;
+            }
+        }
+        else {
+            printInvalidClass();
+            continue;
         }
 
         if(players > 0)
             printInsertPlayerMessage();
     }
+
 }
 
 void Mtmchkin::playRound() {
