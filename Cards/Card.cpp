@@ -8,9 +8,9 @@ Card::Card(String name, int damage, int loot, int force, int gain) : m_name(name
         m_loot (loot) ,m_force(force), m_gain(gain){}
 
 
-void Card::printCard(){
-    printCardDetails(std::cout, m_name);
-    printEndOfCardDetails(std::cout);
+void Card::printCard(ostream& os) const{
+    printCardDetails(os, m_name);
+    printEndOfCardDetails(os);
 }
 
 int Card::getGains() const {
@@ -31,6 +31,12 @@ int Card::getLoot() const {
 
 String Card::getName() const {
     return m_name;
+}
+
+ostream& operator<<(ostream& os, const Card& card)
+{
+    card.printCard(os);
+    return os;
 }
 
 

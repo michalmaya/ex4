@@ -8,14 +8,14 @@ Battle:: Battle(String name,int damage, int loot,int force, int gain) : Card(nam
 {};
 
 
-void Battle::printCard(){
+void Battle::printCard(ostream& os) const{
     bool isDragon= false;
     if (getName() == "Dragon"){
         isDragon= true;
     }
-    printCardDetails(std::cout, getName());
-    printMonsterDetails(std::cout, getForce(), getDamage(), getLoot(), isDragon);
-    printEndOfCardDetails(std::cout);
+    printCardDetails(os, getName());
+    printMonsterDetails(os, getForce(), getDamage(), getLoot(), isDragon);
+    printEndOfCardDetails(os);
 }
 
 Player& Battle:: playCard(Player& player){

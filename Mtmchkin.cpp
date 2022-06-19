@@ -17,7 +17,7 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
     m_status(GameStatus::MidGame),
     m_currRound(0)
 {
-    std::ifstream source("..\\" + fileName);
+    std::ifstream source(fileName);
     if(!source) {
         throw DeckFileNotFound();
     }
@@ -182,6 +182,22 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
         if(players > 0)
             printInsertPlayerMessage();
     }
+}
+
+void Mtmchkin::playRound() {
+
+}
+
+void Mtmchkin::printLeaderBoard() const {
+
+}
+
+bool Mtmchkin::isGameOver() const {
+    return false;
+}
+
+int Mtmchkin::getNumberOfRounds() const {
+    return 0;
 }
 
 void pushCard(std::queue<Card*> q, Card* card)

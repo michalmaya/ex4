@@ -8,7 +8,6 @@ include_directories(.)
 add_executable(ex4
         Mtmchkin.h
         Mtmchkin.cpp
-        minitests.cpp
         utilities.cpp
         utilities.h
         Exception.h
@@ -39,4 +38,5 @@ add_executable(ex4
         Cards/Treasure.cpp
         Cards/Treasure.h
         Cards/Vampire.cpp
-        Cards/Vampire.h Cards/Gang.cpp Cards/Gang.h)
+        Cards/Vampire.h Cards/Gang.cpp Cards/Gang.h
+        test.cpp)

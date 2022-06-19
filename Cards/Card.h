@@ -19,13 +19,15 @@ public:
     virtual ~Card() = default;
     Card(const Card& other)=default;
     Card& operator=(const Card& other)= default;
-    virtual void printCard();
+    virtual void printCard(ostream& os) const;
     virtual Player& playCard(Player& player) =0;
     int getGains() const;
     int getForce() const;
     int getDamage() const;
     int getLoot() const;
     String getName() const;
+
+    friend ostream& operator<<(ostream& os, const Card& card);
 
 
 private:
