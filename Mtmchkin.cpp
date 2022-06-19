@@ -152,11 +152,16 @@ void Mtmchkin::playRound() {
             m_deck.front()->playCard(*m_Players.front());
             m_deck.push(m_deck.front());
             m_deck.pop();
+            if(m_Players.front()->isKnockedOut()){
+                m_losers.push(m_Players.front());
+            }
+            else if(m_Players.front()->isPlayerInGame()){
+                m_winners.push(m_Players.front());
+            }
         }
         m_Players.push(m_Players.front());
         m_Players.pop();
     }
-
 }
 
 void Mtmchkin::printLeaderBoard() const {
@@ -164,11 +169,14 @@ void Mtmchkin::printLeaderBoard() const {
 }
 
 bool Mtmchkin::isGameOver() const {
+    if(m_winners.size()+m_losers.size()==m_numOfPlayers){
+        return true;
+    }
     return false;
 }
 
 int Mtmchkin::getNumberOfRounds() const {
-    return 0;
+    return m_currRound;
 }
 
 void pushCard(std::queue<Card*>& q, Card* card)
