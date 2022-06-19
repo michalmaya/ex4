@@ -10,7 +10,7 @@
 
 class Gang : public Battle {
 public:
-    Gang();
+    Gang() ;
     ~Gang() override = default;
     Gang(Gang& other) = default;
     Gang& operator=(const Gang& other) = default;
