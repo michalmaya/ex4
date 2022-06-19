@@ -9,7 +9,7 @@ Barfight::Barfight() : Card("Barfight", 10)
 
 Player& Barfight:: playCard(Player& player){
     if (player.getJob() != "Fighter"){
-        player.damage(getDamage());
+        player.damage(m_damage);
         printBarfightMessage(false);
     }
     printBarfightMessage(true);

@@ -1,13 +1,12 @@
 # ninja log v5
 25	766	6772749900622956	CMakeFiles/ex4.dir/Players/Rogue.cpp.obj	e2e381951db74ec7
 16	720	6772749900062438	CMakeFiles/ex4.dir/Players/Player.cpp.obj	4c0041c6ce71e1f2
-1	134	6773576037341127	build.ninja	a1836ab0868c8ce
+1	134	6773579368545282	build.ninja	a1836ab0868c8ce
 466	659	6773574983965244	ex4.exe	639244ab52fae6e9
 11	741	6772749900382730	CMakeFiles/ex4.dir/utilities.cpp.obj	3112bc27387ffb11
-1	761	6773544321474287	CMakeFiles/ex4.dir/minitests.cpp.obj	777808cc943e5285
 18	713	6772749900072449	CMakeFiles/ex4.dir/Players/Fighter.cpp.obj	d8da5b20f9424316
-10	451	6773574982080203	CMakeFiles/ex4.dir/Cards/Gang.cpp.obj	85d10610136c9558
 14	710	6772749900052431	CMakeFiles/ex4.dir/Players/Wizard.cpp.obj	d58dbd702124422f
+10	451	6773574982080203	CMakeFiles/ex4.dir/Cards/Gang.cpp.obj	85d10610136c9558
 7	748	6773555816910859	CMakeFiles/ex4.dir/Cards/Card.cpp.obj	157c7e2848efc2bf
 24	759	6773555817050988	CMakeFiles/ex4.dir/Cards/merchant.cpp.obj	6c765b790700c929
 12	453	6773556442640815	CMakeFiles/ex4.dir/Cards/Goblin.cpp.obj	c99fca7dc2f8eecd

@@ -96,3 +96,13 @@ String Player::getJob() const{
 int Player::getHP() const {
     return m_HP;
 }
+
+bool Player::isPlayerInGame() const {
+    if (!m_HP){
+        return false;
+    }
+    else if (m_level==10){
+        return false;
+    }
+    return true;
+}

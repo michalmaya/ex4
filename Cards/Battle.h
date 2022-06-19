@@ -9,13 +9,13 @@
 
 class Battle : public Card{
 public:
-    explicit Battle(String name="",int damage =0, int loot =0,int force =0, int gain=0);
+    explicit Battle(String name="",int damage =0, int loot =0,int force =0);
     ~Battle() override = default;
     Battle(Battle& other)=default;
     Battle& operator=(const Battle& other)= default;
     void printCard(ostream& os) const override;
     Player& playCard(Player& player) override;
-    virtual Player& win(Player& player);
+    Player& win(Player& player);
     virtual Player& loss(Player& player);
 };
 

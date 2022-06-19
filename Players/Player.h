@@ -33,6 +33,7 @@ public:
     virtual int getAttackStrength () const;
     void printInfo(ostream& os) const;
     int getHP() const;
+    bool isPlayerInGame() const;
 
     friend ostream& operator<<(ostream& os, const Player& player);
 
