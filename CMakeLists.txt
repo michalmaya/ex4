@@ -29,6 +29,8 @@ add_executable(ex4
         Cards/Dragon.h
         Cards/Fairy.cpp
         Cards/Fairy.h
+        Cards/Gang.cpp
+        Cards/Gang.h
         Cards/Goblin.cpp
         Cards/Goblin.h
         Cards/merchant.cpp

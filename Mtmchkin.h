@@ -80,6 +80,7 @@ private:
     int m_currRound;
     int m_numOfCards{};
     GameStatus m_status;
+    int m_numOfPlayers;
 };
 
 static void initializeCardsMap(std::map<String, CardsType>& m);
