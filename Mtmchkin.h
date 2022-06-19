@@ -5,6 +5,7 @@
 #include "queue"
 #include "map"
 #include "fstream"
+#include "stack"
 
 #include "Players/Player.h"
 #include "Players/Rogue.h"
@@ -74,6 +75,7 @@ public:
     int getNumberOfRounds() const;
 
 
+
 private:
     std::queue<Player*> m_Players;
     std::queue<Card*> m_deck;
@@ -81,6 +83,8 @@ private:
     int m_numOfCards;
     GameStatus m_status;
     int m_numOfPlayers;
+    std::queue<Player*> m_winners;
+    std::stack<Player*> m_losers;
 };
 
 static void initializeCardsMap(std::map<String, CardsType>& m);

@@ -200,6 +200,12 @@ void Mtmchkin::playRound() {
             m_deck.front()->playCard(*m_Players.front());
             m_deck.push(m_deck.front());
             m_deck.pop();
+            if(m_Players.front()->isKnockedOut()){
+                m_losers.push(m_Players.front());
+            }
+            else if(m_Players.front()->isPlayerInGame()){
+                m_winners.push(m_Players.front());
+            }
         }
         m_Players.push(m_Players.front());
         m_Players.pop();
