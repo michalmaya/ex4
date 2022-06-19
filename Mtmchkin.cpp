@@ -200,7 +200,7 @@ int Mtmchkin::getNumberOfRounds() const {
     return 0;
 }
 
-void pushCard(std::queue<Card*> q, Card* card)
+void pushCard(std::queue<Card*>& q, Card* card)
 {
     q.push(card);
 }

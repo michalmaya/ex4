@@ -20,10 +20,11 @@
 #include "Cards/merchant.h"
 #include "Cards/Pitfall.h"
 #include "Cards/Treasure.h"
+#include "Cards/Gang.h"
 
 
 enum class GameStatus{Win, Loss, MidGame};
-enum class CardsType{Goblin, Vampire, Dragon, Merchant, Treasure, Pitfall, Barfight, Fairy};
+enum class CardsType{Goblin, Vampire, Dragon, Merchant, Treasure, Pitfall, Barfight, Fairy, Gang, EndGang};
 enum class Jobs{Wizard, Fighter, Rogue};
 
 class Mtmchkin{
@@ -79,7 +80,6 @@ private:
     int m_currRound;
     int m_numOfCards{};
     GameStatus m_status;
-    int m_numOfPlayers;
 };
 
 static void initializeCardsMap(std::map<String, CardsType>& m);
@@ -88,7 +88,7 @@ static void initializeJobsMap(std::map<String, Jobs>& m);
 
 static bool isAllAlpha(const std::string& s);
 
-
+static void pushCard(std::queue<Card*> q, Card* card);
 
 
 #endif /* MTMCHKIN_H_ */
