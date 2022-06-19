@@ -29,47 +29,90 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
 
     char line[256];
     int lineCounter = 0;
+    bool isGang = false;
+    Card* tempCard;
+    Gang* tempGang;
     while (source.getline(line,sizeof (line)))
     {
         auto cardsIt = cardsMap.find(line);
         bool validCard = true;
         switch (cardsIt->second) {
             case CardsType::Goblin:
-                m_deck.push(new Goblin());
+                tempCard = new Goblin();
                 break;
             case CardsType::Vampire:
-                m_deck.push(new Vampire());
+                tempCard = new Vampire();
                 break;
             case CardsType::Dragon:
-                m_deck.push(new Dragon());
+                tempCard = new Dragon();
                 break;
             case CardsType::Barfight:
-                m_deck.push(new Barfight());
+                if(isGang) {
+                    validCard = false;
+                    break;
+                }
+                tempCard = new Barfight();
                 break;
             case CardsType::Fairy:
-                m_deck.push(new Fairy());
+                if(isGang) {
+                    validCard = false;
+                    break;
+                }
+                tempCard = new Fairy();
                 break;
             case CardsType::Treasure:
-                m_deck.push(new Treasure());
+                if(isGang) {
+                    validCard = false;
+                    break;
+                }
+                tempCard = new Treasure();
                 break;
             case CardsType::Pitfall:
-                m_deck.push(new Pitfall());
+                if(isGang) {
+                    validCard = false;
+                    break;
+                }
+                tempCard = new Pitfall();
                 break;
             case CardsType::Merchant:
-                m_deck.push(new Merchant());
+                if(isGang) {
+                    validCard = false;
+                    break;
+                }
+                tempCard = new Merchant();
+                break;
+            case CardsType::Gang:
+                if(isGang) {
+                    validCard = false;
+                    break;
+                }
+                tempGang = new Gang();
+                isGang = true;
+                break;
+            case CardsType::EndGang:
+                isGang = false;
+                tempCard = tempGang;
                 break;
             default:
                 validCard = false;
         }
+
         if(!validCard)
             throw DeckFileFormatError(lineCounter);
+
+        if(!isGang) {
+            pushCard(m_deck, tempCard);
+            ++m_numOfCards;
+        }
+        else
+            tempGang->pushMonster((Battle *&)(tempCard));
+
         ++lineCounter;
     }
 
     if(lineCounter < 5)
         throw DeckFileInvalidSize();
 
-    m_numOfCards = lineCounter;
     printStartGameMessage();
     printEnterTeamSizeMessage();
 
@@ -141,6 +184,11 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
     }
 }
 
+void pushCard(std::queue<Card*> q, Card* card)
+{
+    q.push(card);
+}
+
 void initializeCardsMap(std::map<String ,CardsType> &m) {
     m["Goblin"] = CardsType::Goblin;
     m["Vampire"] = CardsType::Vampire;
@@ -150,6 +198,8 @@ void initializeCardsMap(std::map<String ,CardsType> &m) {
     m["Merchant"] = CardsType::Merchant;
     m["Pitfall"] = CardsType::Pitfall;
     m["Treasure"] = CardsType::Treasure;
+    m["Gang"] = CardsType::Gang;
+    m["EndGang"] = CardsType::EndGang;
 }
 
 void initializeJobsMap(std::map<String ,Jobs> &m) {

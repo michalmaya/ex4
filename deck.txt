@@ -1,6 +1,14 @@
-Dragon
-Pitfall
-Barfight
 Fairy
 Goblin
+Barfight
+Treasure
+Merchant
+Gang
+Goblin
 Vampire
+EndGang
+Gang
+Goblin
+Goblin
+Dragon
+EndGang

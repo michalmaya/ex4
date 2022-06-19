@@ -15,7 +15,7 @@ public:
     Battle& operator=(const Battle& other)= default;
     void printCard() override;
     Player& playCard(Player& player) override;
-    Player& win(Player& player);
+    virtual Player& win(Player& player);
     virtual Player& loss(Player& player);
 };
 

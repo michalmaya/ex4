@@ -28,7 +28,7 @@ Player& Battle:: playCard(Player& player){
 }
 
 Player& Battle:: win(Player& player){
-    player.buff(getGains());
+    player.levelUp();
     player.addCoins(getLoot());
     return player;
 }

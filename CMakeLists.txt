@@ -39,4 +39,4 @@ add_executable(ex4
         Cards/Treasure.cpp
         Cards/Treasure.h
         Cards/Vampire.cpp
-        Cards/Vampire.h)
+        Cards/Vampire.h Cards/Gang.cpp Cards/Gang.h)
