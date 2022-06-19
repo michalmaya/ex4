@@ -9,7 +9,7 @@ Fairy:: Fairy() : Card ("Fairy", 0, 0, 0, 10)
 
 Player& Fairy:: playCard(Player &player){
     if(player.getJob()=="Wizard"){
-        player.heal(m_gain);
+        player.heal(getGains());
         printFairyMessage(true);
     }
     printFairyMessage(false);

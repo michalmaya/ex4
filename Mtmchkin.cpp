@@ -16,9 +16,10 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
     m_deck(std::queue<Card*>()),
     m_status(GameStatus::MidGame),
     m_currRound(0),
-    m_numOfPlayers(0)
+    m_numOfPlayers(0),
+    m_numOfCards(0)
 {
-    std::ifstream source("..\\" + fileName);
+    std::ifstream source(fileName);
     if(!source) {
         throw DeckFileNotFound();
     }
@@ -30,47 +31,88 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
 
     char line[256];
     int lineCounter = 0;
-    while (source.getline(line,sizeof (line)))
-    {
+    bool isGang = false;
+    Card* tempCard;
+    Gang* tempGang;
+    while (source.getline(line,sizeof (line))) {
         auto cardsIt = cardsMap.find(line);
         bool validCard = true;
         switch (cardsIt->second) {
             case CardsType::Goblin:
-                m_deck.push(new Goblin());
+                tempCard = new Goblin();
                 break;
             case CardsType::Vampire:
-                m_deck.push(new Vampire());
+                tempCard = new Vampire();
                 break;
             case CardsType::Dragon:
-                m_deck.push(new Dragon());
+                tempCard = new Dragon();
                 break;
             case CardsType::Barfight:
-                m_deck.push(new Barfight());
+                if (isGang) {
+                    validCard = false;
+                    break;
+                }
+                tempCard = new Barfight();
                 break;
             case CardsType::Fairy:
-                m_deck.push(new Fairy());
+                if (isGang) {
+                    validCard = false;
+                    break;
+                }
+                tempCard = new Fairy();
                 break;
             case CardsType::Treasure:
-                m_deck.push(new Treasure());
+                if (isGang) {
+                    validCard = false;
+                    break;
+                }
+                tempCard = new Treasure();
                 break;
             case CardsType::Pitfall:
-                m_deck.push(new Pitfall());
+                if (isGang) {
+                    validCard = false;
+                    break;
+                }
+                tempCard = new Pitfall();
                 break;
             case CardsType::Merchant:
-                m_deck.push(new Merchant());
+                if (isGang) {
+                    validCard = false;
+                    break;
+                }
+                tempCard = new Merchant();
+                break;
+            case CardsType::Gang:
+                if (isGang) {
+                    validCard = false;
+                    break;
+                }
+                tempGang = new Gang();
+                isGang = true;
+                break;
+            case CardsType::EndGang:
+                isGang = false;
+                tempCard = tempGang;
                 break;
             default:
                 validCard = false;
         }
-        if(!validCard)
+
+        if (!validCard)
             throw DeckFileFormatError(lineCounter);
+
+        if (!isGang) {
+            pushCard(m_deck, tempCard);
+            ++m_numOfCards;
+        } else
+            tempGang->pushMonster((Battle *&) (tempCard));
+
         ++lineCounter;
     }
 
-    if(lineCounter < 5)
+    if (m_numOfCards < 5)
         throw DeckFileInvalidSize();
 
-    m_numOfCards = lineCounter;
     printStartGameMessage();
     printEnterTeamSizeMessage();
 
@@ -187,6 +229,8 @@ void initializeCardsMap(std::map<String ,CardsType> &m) {
     m["Merchant"] = CardsType::Merchant;
     m["Pitfall"] = CardsType::Pitfall;
     m["Treasure"] = CardsType::Treasure;
+    m["Gang"] = CardsType::Gang;
+    m["EndGang"] = CardsType::EndGang;
 }
 
 void initializeJobsMap(std::map<String ,Jobs> &m) {
@@ -197,7 +241,7 @@ void initializeJobsMap(std::map<String ,Jobs> &m) {
 
 bool isAllAlpha(const std::string& s)
 {
-    bool flag = true;
+    bool flag;
     for (const auto &c: s) {
         flag = std::isalpha(c);
         if(!flag)
