@@ -201,7 +201,9 @@ void Mtmchkin::playRound() {
             m_deck.front()->playCard(*m_Players.front());
             m_deck.push(m_deck.front());
             m_deck.pop();
-
+            if (!m_Players.front()->isPlayerInGame()){
+                updateLeaderBoard();
+            }
         }
         m_Players.push(m_Players.front());
         m_Players.pop();
@@ -212,11 +214,18 @@ void Mtmchkin::playRound() {
 void Mtmchkin::makeLeaderBoard(){
     m_leadBoard= new Player[m_numOfPlayers];
     for (int i=0; i<m_numOfPlayers; i++){
-        m_leadBoard[i]=m_Players.front();
+        m_leadBoard[i]=m_Players.front(); //make operator
         m_Players.push(m_Players.front());
         m_Players.pop();
     }
+    m_startleadboard= m_leadBoard;
+    m_endLeadBoard= &m_leadBoard[m_numOfPlayers];
 }
+
+void Mtmchkin::updateLeaderBoard() {
+
+}
+
 
 void Mtmchkin::printLeaderBoard() const {
 
