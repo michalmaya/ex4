@@ -4,22 +4,22 @@
 
 #include "Battle.h"
 
-Battle:: Battle(String name,int damage, int loot,int force) : Card(name, damage, loot, force)
+Battle:: Battle(String name,int damage, int loot,int force, int gain) : Card(name, damage, loot, force, gain)
 {};
 
 
-void Battle::printCard(){
+void Battle::printCard(ostream& os) const{
     bool isDragon= false;
-    if (m_name=="Dragon"){
+    if (getName() == "Dragon"){
         isDragon= true;
     }
-    printCardDetails(std::cout, m_name);
-    printMonsterDetails(std::cout, m_force, m_damage, m_loot, isDragon);
-    printEndOfCardDetails(std::cout);
+    printCardDetails(os, getName());
+    printMonsterDetails(os, getForce(), getDamage(), getLoot(), isDragon);
+    printEndOfCardDetails(os);
 }
 
 Player& Battle:: playCard(Player& player){
-    if (m_force < player.getAttackStrength()){
+    if (getForce() < player.getAttackStrength()){
         return win(player);
     }
     else{
@@ -29,11 +29,11 @@ Player& Battle:: playCard(Player& player){
 
 Player& Battle:: win(Player& player){
     player.levelUp();
-    player.addCoins(m_loot);
+    player.addCoins(getLoot());
     return player;
 }
 
 Player& Battle:: loss(Player& player){
-    player.damage(m_damage);
+    player.damage(getDamage());
     return player;
 }
