@@ -223,6 +223,21 @@ void Mtmchkin::makeLeaderBoard(){
 }
 
 void Mtmchkin::updateLeaderBoard() {
+    Player* temp= new Player[m_numOfPlayers];
+    for (int i=0; i< m_numOfPlayers; i++){
+        temp[i]= m_leadBoard[i];
+    }
+    for (Player* i= m_startleadboard; i<= m_endLeadBoard; i++){
+        if(i->isKnockedOut()){
+            std::swap(i, m_endLeadBoard);
+            m_endLeadBoard--;
+        }
+        else if (i->isPlayerInGame()) {
+            std::swap(i, m_startleadboard);
+            m_startleadboard++;
+        }
+    }
+
 
 }
 
