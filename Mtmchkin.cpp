@@ -239,14 +239,15 @@ void Mtmchkin::updateLeaderBoard() {
             beginCounter++;
         }
     }
-    Player* j =temp;
+    Player* j =temp+m_endLeadBoard-m_startleadboard; //make operator
     for (Player* i= m_startleadboard; i<=m_endLeadBoard; i++){
         if (j->isPlayerInGame()){
-
+            (i+beginCounter)*=j*;//make operator
         }
-
     }
-
+    m_startleadboard+=beginCounter;
+    m_endLeadBoard+=endCounter;
+    delete temp;
 }
 
 
