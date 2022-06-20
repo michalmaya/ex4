@@ -9,7 +9,7 @@
 
 class Rogue : public Player{
 public:
-    explicit Rogue(const char* name, int maxHP=100, int force=5);
+    explicit Rogue(const char* name,int order, int maxHP=100, int force=5);
     ~Rogue () override = default;
     Rogue(const Rogue& other) = default;
     Rogue& operator=(const Rogue& other) = default;

@@ -13,5 +13,7 @@ public:
     ~Vampire() override =default;
     Vampire(Vampire& other)=default;
     Vampire& operator=(const Vampire& other)= default;
+
+    Player & loss(Player &player) override;
 };
 #endif //EX4_VAMPIRE_H

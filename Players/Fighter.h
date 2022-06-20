@@ -9,7 +9,7 @@
 
 class Fighter : public Player{
 public:
-    explicit Fighter(const char* name, int maxHP=100, int force=5);
+    explicit Fighter(const char* name, int order, int maxHP=100, int force=5);
     ~Fighter () override = default;
     Fighter(const Fighter& other) = default;
     Fighter& operator=(const Fighter& other) = default;

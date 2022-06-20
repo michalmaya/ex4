@@ -12,7 +12,7 @@
 
 class Wizard : public Player{
 public:
-    explicit Wizard(const char* name, int maxHP=100, int force=5);
+    explicit Wizard(const char* name, int order, int maxHP=100, int force=5);
     ~Wizard () override = default;
     Wizard(const Wizard& other) = default;
     Wizard& operator=(const Wizard& other) = default;

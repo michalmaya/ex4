@@ -6,7 +6,7 @@
 #include "Fighter.h"
 
 
-Wizard::Wizard(const char *name, int maxHP, int force) : Player(name,"Wizard",maxHP,force)
+Wizard::Wizard(const char *name, int order, int maxHP, int force) : Player(name,"Wizard",order,maxHP,force)
 {}
 
 void Wizard::heal(int amount) {

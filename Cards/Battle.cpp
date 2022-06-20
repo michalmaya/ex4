@@ -21,7 +21,7 @@ void Battle::printCard(ostream& os) const{
 }
 
 Player& Battle:: playCard(Player& player){
-    if (getForce() < player.getAttackStrength()){
+    if (getForce() <= player.getAttackStrength()){
         return win(player);
     }
     else{
@@ -32,10 +32,12 @@ Player& Battle:: playCard(Player& player){
 Player& Battle:: win(Player& player){
     player.levelUp();
     player.addCoins(getLoot());
+    printWinBattle(player.getName(),getName());
     return player;
 }
 
 Player& Battle:: loss(Player& player){
     player.damage(getDamage());
+    printLossBattle(player.getName(),getName());
     return player;
 }

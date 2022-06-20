@@ -38,6 +38,7 @@ Player& Merchant :: playCard(Player& player){
 
     switch (currAction) {
         case Actions::DoNothing:
+            m_cost = 0;
             break;
         case Actions::BuyHeal:
             m_cost = HEAL_COST;

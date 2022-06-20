@@ -12,6 +12,7 @@ Player& Barfight:: playCard(Player& player){
         player.damage(getDamage());
         printBarfightMessage(false);
     }
-    printBarfightMessage(true);
+    else
+        printBarfightMessage(true);
     return player;
 }

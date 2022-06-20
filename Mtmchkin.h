@@ -24,7 +24,7 @@
 #include "Cards/Gang.h"
 
 
-enum class GameStatus{Win, Loss, MidGame};
+enum class GameStatus{Over, MidGame};
 enum class CardsType{Goblin, Vampire, Dragon, Merchant, Treasure, Pitfall, Barfight, Fairy, Gang, EndGang};
 enum class Jobs{Wizard, Fighter, Rogue};
 
@@ -75,11 +75,7 @@ public:
     int getNumberOfRounds() const;
 
 
-    /*
-    void makeLeaderBoard();
-
-    void updateLeaderBoard();
-    */
+    void setWinLose();
 
 
 private:
@@ -91,7 +87,6 @@ private:
     int m_numOfPlayers;
     int m_inGamePlayers;
     Player** m_leadBoard;
-    std::map<Player*,int> m_startingOrder;
 };
 
 static void initializeCardsMap(std::map<String, CardsType>& m);
@@ -102,9 +97,11 @@ static bool isAllAlpha(const std::string& s);
 
 static void pushCard(std::queue<Card*> &q, Card* card);
 
-static bool isSorted(Player** &board, int size, std::map<Player*,int> &map);
+static bool isSorted(Player** &board, int size);
 
-static void updateLeadBoard(Player** &board, int size, std::map<Player*,int> &map);
+static void updateLeadBoard(Player** &board, int size);
+
+static int findInLeaderBoard(Player** &board, Player& player, int size);
 
 
 #endif /* MTMCHKIN_H_ */

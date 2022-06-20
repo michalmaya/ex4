@@ -171,24 +171,21 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
             Player* tempPlayer;
             switch (jobIt->second) {
                 case Jobs::Wizard:
-                    tempPlayer = new Wizard(name.c_str());
+                    tempPlayer = new Wizard(name.c_str(),players);
                     m_Players.push(tempPlayer);
                     m_leadBoard[players - 1] = tempPlayer;
-                    m_startingOrder[tempPlayer] = players;
                     players--;
                     break;
                 case Jobs::Rogue:
-                    tempPlayer = new Rogue(name.c_str());
+                    tempPlayer = new Rogue(name.c_str(),players);
                     m_Players.push(tempPlayer);
                     m_leadBoard[players - 1] = tempPlayer;
-                    m_startingOrder[tempPlayer] = players;
                     players--;
                     break;
                 case Jobs::Fighter:
-                    tempPlayer = new Fighter(name.c_str());
+                    tempPlayer = new Fighter(name.c_str(),players);
                     m_Players.push(tempPlayer);
                     m_leadBoard[players - 1] = tempPlayer;
-                    m_startingOrder[tempPlayer] = players;
                     players--;
                     break;
             }
@@ -211,44 +208,64 @@ void Mtmchkin::playRound() {
     printRoundStartMessage(m_currRound);
     for (int i=0; i<m_numOfPlayers; i++){
         String curPlayerName= m_Players.front()->getName();
-        printTurnStartMessage(curPlayerName);
         if(m_Players.front()->isPlayerInGame()){
+            printTurnStartMessage(curPlayerName);
             m_deck.front()->playCard(*m_Players.front());
+            if(m_Players.front()->isKnockedOut())
+            {
+                int temp = findInLeaderBoard(m_leadBoard,*m_Players.front(),m_inGamePlayers);
+                m_leadBoard[temp] = m_leadBoard[m_inGamePlayers-1];
+                m_leadBoard[m_inGamePlayers-1] = m_Players.front();
+                --m_inGamePlayers;
+            }
             m_deck.push(m_deck.front());
             m_deck.pop();
         }
         m_Players.push(m_Players.front());
         m_Players.pop();
     }
-    updateLeadBoard(m_leadBoard,m_inGamePlayers,m_startingOrder);
+    setWinLose();
+    updateLeadBoard(m_leadBoard,m_inGamePlayers);
 }
 
-bool isSorted(Player** &board, int size, std::map<Player*,int> &map)
+int findInLeaderBoard(Player** &board,Player& player, int size)
+{
+    for (int i = 0; i < size; ++i) {
+        if(board[i]->getOrder() == player.getOrder())
+            return i;
+    }
+    return -1;
+}
+
+bool isSorted(Player** &board, int size)
 {
     for (int i = 0; i < size - 1; ++i) {
         int firstLevel = board[i]->getLevel();
         int nextLevel = board[i+1]->getLevel();
         if(nextLevel > firstLevel)
             return false;
-        else if (nextLevel == firstLevel)
-            if(map[board[i + 1]] <= map[board[i]])
+        else if (nextLevel == firstLevel) {
+            int order1 = board[i + 1]->getOrder();
+            int order2 = board[i]->getOrder();
+            if (board[i + 1]->getOrder() > board[i]->getOrder())
                 return false;
+        }
     }
     return true;
 }
 
-void updateLeadBoard(Player** &board, int size, std::map<Player*,int> &map)
+void updateLeadBoard(Player** &board, int size)
 {
-    while(!isSorted(board,size,map))
+    while(!isSorted(board,size))
     {
-        for (int i = 0; i < size; ++i) {
+        for (int i = 0; i < size - 1; ++i) {
             int firstLevel = board[i]->getLevel();
             int nextLevel = board[i+1]->getLevel();
             if(nextLevel > firstLevel)
                 std::swap(board[i],board[i+1]);
             else if(nextLevel == firstLevel)
             {
-                if(map[board[i + 1]] <= map[board[i]])
+                if(board[i + 1]->getOrder() > board[i]->getOrder())
                     std::swap(board[i],board[i+1]);
             }
         }
@@ -306,5 +323,20 @@ bool isAllAlpha(const std::string& s)
             return false;
     }
     return true;
+}
+
+void Mtmchkin::setWinLose(){
+    bool isAllWinOrDead = true;
+
+    for (int i = 0; i < m_numOfPlayers; ++i) {
+        if(!m_Players.front()->isKnockedOut() && m_Players.front()->getLevel() < 10)
+            isAllWinOrDead = false;
+        m_Players.push(m_Players.front());
+        m_Players.pop();
+    }
+    if(isAllWinOrDead) {
+        m_status = GameStatus::Over;
+        printGameEndMessage();
+    }
 }
 

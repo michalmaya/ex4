@@ -4,7 +4,7 @@
 
 #include "Rogue.h"
 
-Rogue::Rogue(const char *name, int maxHP, int force) : Player(name,"Rogue",maxHP,force)
+Rogue::Rogue(const char *name, int order, int maxHP, int force) : Player(name,"Rogue",order,maxHP,force)
 {}
 
 void Rogue::addCoins(int amount) {

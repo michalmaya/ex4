@@ -14,13 +14,14 @@ typedef std::ostream ostream;
 
 class Player {
 public:
-    explicit Player (const char* name ="",const char* job = "", int maxHP=100, int force=5);
+    explicit Player (const char* name, const char* job, int order, int maxHP=100, int force=5);
     Player();
     virtual ~Player () {} ;
     Player (const Player& player) = default;
     Player& operator= (const Player& other) = default;
     void levelUp();
     int getLevel() const;
+    void weaken();
     void buff(int amount);
     void damage(int amount);
     bool isKnockedOut() const;
@@ -28,6 +29,7 @@ public:
     String getName () const;
     int getCoins() const;
     String getJob() const;
+    int getOrder() const;
     virtual void heal(int amount);
     virtual void addCoins (int amount);
     virtual int getAttackStrength () const;
@@ -46,6 +48,7 @@ private:
     int m_maxHP;
     int m_HP;
     int m_coins;
+    int m_order;
 
 };
 

@@ -12,6 +12,7 @@ Player& Fairy:: playCard(Player &player){
         player.heal(getGains());
         printFairyMessage(true);
     }
-    printFairyMessage(false);
+    else
+        printFairyMessage(false);
     return player;
 }
