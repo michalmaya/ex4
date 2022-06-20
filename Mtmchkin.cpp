@@ -252,7 +252,10 @@ void Mtmchkin::updateLeaderBoard() {
 
 
 void Mtmchkin::printLeaderBoard() const {
-
+    printLeaderBoardStartMessage();
+    for (int i=0; i<m_numOfPlayers; i++){
+        m_leadBoard[i].printInfo(std::cout);
+    }
 }
 
 /*            if(m_Players.front()->isKnockedOut()){
