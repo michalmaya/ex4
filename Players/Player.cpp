@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "utilities.h"
 
 Player::Player(const char* name,const char* job, int maxHP, int force) {
     Player::m_name = name;
@@ -7,6 +8,16 @@ Player::Player(const char* name,const char* job, int maxHP, int force) {
     Player::m_force = force <= 0 ? 5 : force;
     Player::m_maxHP = maxHP <= 0 ? 100 : maxHP;
     Player::m_HP = maxHP <= 0 ? 100 : maxHP;
+    Player::m_coins = 0;
+}
+
+Player::Player() {
+    Player::m_name = "";
+    Player::m_job = "";
+    Player::m_level = 1;
+    Player::m_force = 0;
+    Player::m_maxHP = 0;
+    Player::m_HP = 0;
     Player::m_coins = 0;
 }
 
@@ -98,11 +109,7 @@ int Player::getHP() const {
 }
 
 bool Player::isPlayerInGame() const {
-    if (!m_HP){
+    if(isKnockedOut() || getLevel() >= 10)
         return false;
-    }
-    else if (m_level==10){
-        return false;
-    }
     return true;
 }

@@ -74,10 +74,12 @@ public:
     */
     int getNumberOfRounds() const;
 
+
+    /*
     void makeLeaderBoard();
 
     void updateLeaderBoard();
-
+    */
 
 
 private:
@@ -87,9 +89,9 @@ private:
     int m_numOfCards;
     GameStatus m_status;
     int m_numOfPlayers;
-    Player* m_leadBoard;
-    Player* m_startleadboard;
-    Player* m_endLeadBoard;
+    int m_inGamePlayers;
+    Player** m_leadBoard;
+    std::map<Player*,int> m_startingOrder;
 };
 
 static void initializeCardsMap(std::map<String, CardsType>& m);
@@ -99,6 +101,10 @@ static void initializeJobsMap(std::map<String, Jobs>& m);
 static bool isAllAlpha(const std::string& s);
 
 static void pushCard(std::queue<Card*> &q, Card* card);
+
+static bool isSorted(Player** &board, int size, std::map<Player*,int> &map);
+
+static void updateLeadBoard(Player** &board, int size, std::map<Player*,int> &map);
 
 
 #endif /* MTMCHKIN_H_ */

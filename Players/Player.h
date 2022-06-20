@@ -8,7 +8,6 @@
 
 #include "string"
 #include "ostream"
-#include "utilities.h"
 
 typedef std::string String;
 typedef std::ostream ostream;
@@ -16,6 +15,7 @@ typedef std::ostream ostream;
 class Player {
 public:
     explicit Player (const char* name ="",const char* job = "", int maxHP=100, int force=5);
+    Player();
     virtual ~Player () {} ;
     Player (const Player& player) = default;
     Player& operator= (const Player& other) = default;

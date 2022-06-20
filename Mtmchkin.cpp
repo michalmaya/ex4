@@ -17,6 +17,7 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
     m_status(GameStatus::MidGame),
     m_currRound(0),
     m_numOfPlayers(0),
+    m_inGamePlayers(0),
     m_numOfCards(0)
 {
     std::ifstream source(fileName);
@@ -137,7 +138,9 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
         }
     }
 
-    m_numOfPlayers=players;
+    m_numOfPlayers = players;
+    m_inGamePlayers = players;
+    m_leadBoard = new Player*[m_numOfPlayers];
     std::string name, job;
 
     printInsertPlayerMessage();
@@ -165,17 +168,27 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
 
         auto jobIt = jobsMap.find(job);
         if(jobIt != jobsMap.end()) {
+            Player* tempPlayer;
             switch (jobIt->second) {
                 case Jobs::Wizard:
-                    m_Players.push(new Wizard(name.c_str()));
+                    tempPlayer = new Wizard(name.c_str());
+                    m_Players.push(tempPlayer);
+                    m_leadBoard[players - 1] = tempPlayer;
+                    m_startingOrder[tempPlayer] = players;
                     players--;
                     break;
                 case Jobs::Rogue:
-                    m_Players.push(new Rogue(name.c_str()));
+                    tempPlayer = new Rogue(name.c_str());
+                    m_Players.push(tempPlayer);
+                    m_leadBoard[players - 1] = tempPlayer;
+                    m_startingOrder[tempPlayer] = players;
                     players--;
                     break;
                 case Jobs::Fighter:
-                    m_Players.push(new Fighter(name.c_str()));
+                    tempPlayer = new Fighter(name.c_str());
+                    m_Players.push(tempPlayer);
+                    m_leadBoard[players - 1] = tempPlayer;
+                    m_startingOrder[tempPlayer] = players;
                     players--;
                     break;
             }
@@ -188,7 +201,8 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
         if(players > 0)
             printInsertPlayerMessage();
     }
-    makeLeaderBoard();
+
+    //makeLeaderBoard();
 
 }
 
@@ -197,73 +211,57 @@ void Mtmchkin::playRound() {
     printRoundStartMessage(m_currRound);
     for (int i=0; i<m_numOfPlayers; i++){
         String curPlayerName= m_Players.front()->getName();
+        printTurnStartMessage(curPlayerName);
         if(m_Players.front()->isPlayerInGame()){
             m_deck.front()->playCard(*m_Players.front());
             m_deck.push(m_deck.front());
             m_deck.pop();
-            if (!m_Players.front()->isPlayerInGame()){
-                updateLeaderBoard();
+        }
+        m_Players.push(m_Players.front());
+        m_Players.pop();
+    }
+    updateLeadBoard(m_leadBoard,m_inGamePlayers,m_startingOrder);
+}
+
+bool isSorted(Player** &board, int size, std::map<Player*,int> &map)
+{
+    for (int i = 0; i < size - 1; ++i) {
+        int firstLevel = board[i]->getLevel();
+        int nextLevel = board[i+1]->getLevel();
+        if(nextLevel > firstLevel)
+            return false;
+        else if (nextLevel == firstLevel)
+            if(map[board[i + 1]] <= map[board[i]])
+                return false;
+    }
+    return true;
+}
+
+void updateLeadBoard(Player** &board, int size, std::map<Player*,int> &map)
+{
+    while(!isSorted(board,size,map))
+    {
+        for (int i = 0; i < size; ++i) {
+            int firstLevel = board[i]->getLevel();
+            int nextLevel = board[i+1]->getLevel();
+            if(nextLevel > firstLevel)
+                std::swap(board[i],board[i+1]);
+            else if(nextLevel == firstLevel)
+            {
+                if(map[board[i + 1]] <= map[board[i]])
+                    std::swap(board[i],board[i+1]);
             }
         }
-        m_Players.push(m_Players.front());
-        m_Players.pop();
     }
-
-}
-
-void Mtmchkin::makeLeaderBoard(){
-    m_leadBoard= new Player[m_numOfPlayers];
-    for (int i=0; i<m_numOfPlayers; i++){
-        m_leadBoard[i]=m_Players.front(); //make operator
-        m_Players.push(m_Players.front());
-        m_Players.pop();
-    }
-    m_startleadboard= m_leadBoard;
-    m_endLeadBoard= &m_leadBoard[m_numOfPlayers];
-}
-
-void Mtmchkin::updateLeaderBoard() {
-    Player* temp= new Player[m_numOfPlayers];
-    int beginCounter =0;
-    int endCounter =0;
-    for (int i=0; i< m_numOfPlayers; i++){
-        temp[i]= m_leadBoard[i];
-    }
-    for (Player* i= m_startleadboard; i<= m_endLeadBoard; i++){
-        if(i->isKnockedOut()){
-            std::swap(i, m_endLeadBoard);
-            endCounter--;
-        }
-        else if (i->isPlayerInGame()) {
-            std::swap(i, m_startleadboard);
-            beginCounter++;
-        }
-    }
-    Player* j =temp+m_endLeadBoard-m_startleadboard; //make operator
-    for (Player* i= m_startleadboard; i<=m_endLeadBoard; i++){
-        if (j->isPlayerInGame()){
-            (i+beginCounter)*=j*;//make operator
-        }
-    }
-    m_startleadboard+=beginCounter;
-    m_endLeadBoard+=endCounter;
-    delete temp;
 }
 
 
 void Mtmchkin::printLeaderBoard() const {
     printLeaderBoardStartMessage();
     for (int i=0; i<m_numOfPlayers; i++){
-        m_leadBoard[i].printInfo(std::cout);
+        printPlayerLeaderBoard(i+1, *m_leadBoard[i]);
     }
 }
-
-/*            if(m_Players.front()->isKnockedOut()){
-                m_losers.push(m_Players.front());
-            }
-            else if(m_Players.front()->isPlayerInGame()){
-                m_winners.push(m_Players.front());
-            }*/
 
 bool Mtmchkin::isGameOver() const {
     if(m_status == GameStatus::MidGame)

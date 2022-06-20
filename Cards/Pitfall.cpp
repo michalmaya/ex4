@@ -12,6 +12,7 @@ Player& Pitfall:: playCard(Player& player){
         player.damage(getDamage());
         printPitfallMessage(false);
     }
-    printPitfallMessage(true);
+    else
+        printPitfallMessage(true);
     return player;
 }
