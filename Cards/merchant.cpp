@@ -9,7 +9,8 @@ Merchant::Merchant() :
     m_cost(0)
 {}
 
-Player& Merchant :: playCard(Player& player){
+Player& Merchant :: playCard(Player& player)
+{
     int input = -1;
     printMerchantInitialMessageForInteractiveEncounter(std::cout,player.getName(), player.getCoins());
 
@@ -31,11 +32,9 @@ Player& Merchant :: playCard(Player& player){
         {
             continue;
         }
-        if(input < 0 || input >= acts.size())
-            printInvalidInput();
     }
-    Actions currAction = acts[input];
 
+    Actions currAction = acts[input];
     switch (currAction) {
         case Actions::DoNothing:
             m_cost = 0;

@@ -12,16 +12,6 @@ Player::Player(const char* name,const char* job, int order, int maxHP, int force
     Player::m_order = order;
 }
 
-Player::Player() {
-    Player::m_name = "";
-    Player::m_job = "";
-    Player::m_level = 1;
-    Player::m_force = 0;
-    Player::m_maxHP = 0;
-    Player::m_HP = 0;
-    Player::m_coins = 10;
-}
-
 void Player::levelUp() {
     if (m_level < 10) {
         m_level++;
@@ -32,9 +22,11 @@ int Player::getLevel() const {
     return m_level;
 }
 
-void Player::weaken() {
-    if(m_force > 0)
-        --m_force;
+void Player::weaken(int amount) {
+    if(m_force - amount > 0)
+        m_force -= amount;
+    else
+        m_force = 0;
 }
 
 int Player::getOrder() const {

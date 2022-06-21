@@ -14,7 +14,9 @@ public:
     ~Gang() override = default;
     Gang(Gang& other) = default;
     Gang& operator=(const Gang& other) = default;
+
     void pushMonster(Battle* &monster);
+
     Player& playCard(Player& player) override;
     Player& win(Player& player) override;
     Player& loss(Player& player) override;
@@ -23,6 +25,7 @@ public:
 private:
     std::queue<Battle*> m_monsterQueue;
     int m_gangSize;
+    int m_aliveGangsters;
 };
 
 

@@ -9,7 +9,7 @@ Vampire::Vampire() : Battle("Vampire", 10, 2, 10)
 
 Player &Vampire::loss(Player &player) {
     player.damage(getDamage());
-    player.weaken();
+    player.weaken(FORCE_WEAKEN);
     printLossBattle(player.getName(),getName());
     return player;
 }

@@ -4,7 +4,7 @@
 
 #include "Fighter.h"
 
-Fighter::Fighter(const char *name, int order, int maxHP, int force) : Player(name,"Fighter", order,maxHP,force)
+Fighter::Fighter(const char *name, int order, int maxHP, int force) : Player(name,"Fighter", order, maxHP, force)
 {}
 
 int Fighter::getAttackStrength() const {

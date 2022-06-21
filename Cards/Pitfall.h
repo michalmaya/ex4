@@ -13,6 +13,7 @@ public:
     ~Pitfall() override =default;
     Pitfall(Pitfall& other)=default;
     Pitfall& operator=(const Pitfall& other)= default;
+
     Player& playCard(Player& player) override;
 };
 

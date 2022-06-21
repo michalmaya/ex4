@@ -16,8 +16,8 @@ public:
     ~Wizard () override = default;
     Wizard(const Wizard& other) = default;
     Wizard& operator=(const Wizard& other) = default;
-    void heal(int amount) override;
 
+    void heal(int amount) override;
 };
 
 

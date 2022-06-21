@@ -16,8 +16,6 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
     m_deck(std::queue<Card*>()),
     m_status(GameStatus::MidGame),
     m_currRound(0),
-    m_numOfPlayers(0),
-    m_inGamePlayers(0),
     m_numOfCards(0)
 {
     std::ifstream source(fileName);
@@ -26,12 +24,13 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
     }
 
     std::map<std::string, CardsType> cardsMap;
-    initializeCardsMap(cardsMap);
     std::map<std::string, Jobs> jobsMap;
+    initializeCardsMap(cardsMap);
     initializeJobsMap(jobsMap);
 
     char line[256];
     int lineCounter = 1;
+
     bool isGang = false;
     Card* tempCard;
     Gang* tempGang;
@@ -39,63 +38,61 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
         auto cardsIt = cardsMap.find(line);
         bool validCard = true;
         if(cardsIt != cardsMap.end()) {
-            switch (cardsIt->second) {
-                case CardsType::Goblin:
-                    tempCard = new Goblin();
-                    break;
-                case CardsType::Vampire:
-                    tempCard = new Vampire();
-                    break;
-                case CardsType::Dragon:
-                    tempCard = new Dragon();
-                    break;
-                case CardsType::Barfight:
-                    if (isGang) {
+            if(isGang) {
+                switch (cardsIt->second) {
+                    case CardsType::Goblin:
+                        tempCard = new Goblin();
+                        break;
+                    case CardsType::Vampire:
+                        tempCard = new Vampire();
+                        break;
+                    case CardsType::Dragon:
+                        tempCard = new Dragon();
+                        break;
+                    case CardsType::EndGang:
+                        isGang = false;
+                        tempCard = tempGang;
+                        break;
+                    default:
                         validCard = false;
                         break;
-                    }
-                    tempCard = new Barfight();
-                    break;
-                case CardsType::Fairy:
-                    if (isGang) {
+                }
+            }
+            else
+            {
+                switch (cardsIt->second) {
+                    case CardsType::Goblin:
+                        tempCard = new Goblin();
+                        break;
+                    case CardsType::Vampire:
+                        tempCard = new Vampire();
+                        break;
+                    case CardsType::Dragon:
+                        tempCard = new Dragon();
+                        break;
+                    case CardsType::Barfight:
+                        tempCard = new Barfight();
+                        break;
+                    case CardsType::Fairy:
+                        tempCard = new Fairy();
+                        break;
+                    case CardsType::Treasure:
+                        tempCard = new Treasure();
+                        break;
+                    case CardsType::Pitfall:
+                        tempCard = new Pitfall();
+                        break;
+                    case CardsType::Merchant:
+                        tempCard = new Merchant();
+                        break;
+                    case CardsType::Gang:
+                        tempGang = new Gang();
+                        isGang = true;
+                        break;
+                    case CardsType::EndGang:
                         validCard = false;
                         break;
-                    }
-                    tempCard = new Fairy();
-                    break;
-                case CardsType::Treasure:
-                    if (isGang) {
-                        validCard = false;
-                        break;
-                    }
-                    tempCard = new Treasure();
-                    break;
-                case CardsType::Pitfall:
-                    if (isGang) {
-                        validCard = false;
-                        break;
-                    }
-                    tempCard = new Pitfall();
-                    break;
-                case CardsType::Merchant:
-                    if (isGang) {
-                        validCard = false;
-                        break;
-                    }
-                    tempCard = new Merchant();
-                    break;
-                case CardsType::Gang:
-                    if (isGang) {
-                        validCard = false;
-                        break;
-                    }
-                    tempGang = new Gang();
-                    isGang = true;
-                    break;
-                case CardsType::EndGang:
-                    isGang = false;
-                    tempCard = tempGang;
-                    break;
+                }
             }
         }
         else
@@ -107,7 +104,7 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
         if (!isGang) {
             pushCard(m_deck, tempCard);
             ++m_numOfCards;
-        } else
+        } else if(cardsIt->second != CardsType::Gang)
             tempGang->pushMonster((Battle *&) (tempCard));
 
         ++lineCounter;
@@ -141,9 +138,9 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
     m_numOfPlayers = players;
     m_inGamePlayers = players;
     m_leadBoard = new Player*[m_numOfPlayers];
-    std::string name, job;
 
     printInsertPlayerMessage();
+    std::string name, job;
     while(players > 0){
         std::cin.getline(line,sizeof (line));
         std::string input = line;
@@ -198,9 +195,6 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
         if(players > 0)
             printInsertPlayerMessage();
     }
-
-    //makeLeaderBoard();
-
 }
 
 void Mtmchkin::playRound() {
@@ -245,8 +239,6 @@ bool isSorted(Player** &board, int size)
         if(nextLevel > firstLevel)
             return false;
         else if (nextLevel == firstLevel) {
-            int order1 = board[i + 1]->getOrder();
-            int order2 = board[i]->getOrder();
             if (board[i + 1]->getOrder() > board[i]->getOrder())
                 return false;
         }

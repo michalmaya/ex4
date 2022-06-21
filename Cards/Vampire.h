@@ -6,6 +6,7 @@
 #define EX4_VAMPIRE_H
 
 #include "Battle.h"
+#define FORCE_WEAKEN 1
 
 class Vampire : public Battle{
 public:

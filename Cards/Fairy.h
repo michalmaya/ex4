@@ -13,6 +13,7 @@ public:
     ~Fairy() override = default;
     Fairy(Fairy& other)=default;
     Fairy& operator=(const Fairy& other)=default;
+
     Player & playCard(Player &player) override;
 };
 

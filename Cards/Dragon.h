@@ -13,6 +13,7 @@ public:
     ~Dragon() override =default;
     Dragon(Dragon& other)=default;
     Dragon& operator=(const Dragon& other)= default;
+
     Player& loss(Player& player) override;
 };
 

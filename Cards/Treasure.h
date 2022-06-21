@@ -13,6 +13,7 @@ public:
     ~Treasure() override =default;
     Treasure(Treasure& other)=default;
     Treasure& operator=(const Treasure& other)= default;
+
     Player& playCard(Player& player) override;
 };
 

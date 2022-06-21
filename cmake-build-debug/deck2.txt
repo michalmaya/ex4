@@ -1,0 +1,9 @@
+Fairy
+Gang
+Goblin
+Goblin
+EndGang
+Fairy
+Fairy
+Fairy
+Fairy

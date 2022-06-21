@@ -19,8 +19,10 @@ public:
     virtual ~Card() = default;
     Card(const Card& other)=default;
     Card& operator=(const Card& other)= default;
+
     virtual void printCard(ostream& os) const;
     virtual Player& playCard(Player& player) =0;
+
     int getGains() const;
     int getForce() const;
     int getDamage() const;

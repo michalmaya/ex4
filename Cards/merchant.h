@@ -23,7 +23,9 @@ public:
     ~Merchant() override =default;
     Merchant(Merchant& other)=default;
     Merchant& operator=(const Merchant& other)=default;
+
     Player& playCard(Player& player) override;
+
 private:
     int m_cost;
 };
