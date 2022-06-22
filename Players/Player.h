@@ -28,7 +28,7 @@ public:
 
     void damage(int amount);
     bool isKnockedOut() const;
-    bool isPlayerInGame() const;
+    bool isWon() const;
 
     bool pay (int amount);
 

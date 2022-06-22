@@ -185,11 +185,11 @@ build CMakeFiles\ex4.dir\Cards\Vampire.cpp.obj: CXX_COMPILER__ex4_Debug C$:\User
   TARGET_COMPILE_PDB = CMakeFiles\ex4.dir\
   TARGET_PDB = ex4.pdb
 
-build CMakeFiles\ex4.dir\test_finalCheck.cpp.obj: CXX_COMPILER__ex4_Debug C$:\Users\shayr\Documents\GitHub\ex4\test_finalCheck.cpp || cmake_object_order_depends_target_ex4
+build CMakeFiles\ex4.dir\tool\main.cpp.obj: CXX_COMPILER__ex4_Debug C$:\Users\shayr\Documents\GitHub\ex4\tool\main.cpp || cmake_object_order_depends_target_ex4
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd
   INCLUDES = -IC:\Users\shayr\Documents\GitHub\ex4\.
   OBJECT_DIR = CMakeFiles\ex4.dir
-  OBJECT_FILE_DIR = CMakeFiles\ex4.dir
+  OBJECT_FILE_DIR = CMakeFiles\ex4.dir\tool
   TARGET_COMPILE_PDB = CMakeFiles\ex4.dir\
   TARGET_PDB = ex4.pdb
 
@@ -201,7 +201,7 @@ build CMakeFiles\ex4.dir\test_finalCheck.cpp.obj: CXX_COMPILER__ex4_Debug C$:\Us
 #############################################
 # Link the executable ex4.exe
 
-build ex4.exe: CXX_EXECUTABLE_LINKER__ex4_Debug CMakeFiles\ex4.dir\Mtmchkin.cpp.obj CMakeFiles\ex4.dir\utilities.cpp.obj CMakeFiles\ex4.dir\Players\Wizard.cpp.obj CMakeFiles\ex4.dir\Players\Player.cpp.obj CMakeFiles\ex4.dir\Players\Fighter.cpp.obj CMakeFiles\ex4.dir\Players\Rogue.cpp.obj CMakeFiles\ex4.dir\Cards\Barfight.cpp.obj CMakeFiles\ex4.dir\Cards\Battle.cpp.obj CMakeFiles\ex4.dir\Cards\Card.cpp.obj CMakeFiles\ex4.dir\Cards\Dragon.cpp.obj CMakeFiles\ex4.dir\Cards\Fairy.cpp.obj CMakeFiles\ex4.dir\Cards\Gang.cpp.obj CMakeFiles\ex4.dir\Cards\Goblin.cpp.obj CMakeFiles\ex4.dir\Cards\Merchant.cpp.obj CMakeFiles\ex4.dir\Cards\Pitfall.cpp.obj CMakeFiles\ex4.dir\Cards\Treasure.cpp.obj CMakeFiles\ex4.dir\Cards\Vampire.cpp.obj CMakeFiles\ex4.dir\test_finalCheck.cpp.obj
+build ex4.exe: CXX_EXECUTABLE_LINKER__ex4_Debug CMakeFiles\ex4.dir\Mtmchkin.cpp.obj CMakeFiles\ex4.dir\utilities.cpp.obj CMakeFiles\ex4.dir\Players\Wizard.cpp.obj CMakeFiles\ex4.dir\Players\Player.cpp.obj CMakeFiles\ex4.dir\Players\Fighter.cpp.obj CMakeFiles\ex4.dir\Players\Rogue.cpp.obj CMakeFiles\ex4.dir\Cards\Barfight.cpp.obj CMakeFiles\ex4.dir\Cards\Battle.cpp.obj CMakeFiles\ex4.dir\Cards\Card.cpp.obj CMakeFiles\ex4.dir\Cards\Dragon.cpp.obj CMakeFiles\ex4.dir\Cards\Fairy.cpp.obj CMakeFiles\ex4.dir\Cards\Gang.cpp.obj CMakeFiles\ex4.dir\Cards\Goblin.cpp.obj CMakeFiles\ex4.dir\Cards\Merchant.cpp.obj CMakeFiles\ex4.dir\Cards\Pitfall.cpp.obj CMakeFiles\ex4.dir\Cards\Treasure.cpp.obj CMakeFiles\ex4.dir\Cards\Vampire.cpp.obj CMakeFiles\ex4.dir\tool\main.cpp.obj
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd
   LINK_FLAGS = /machine:X86 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib

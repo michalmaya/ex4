@@ -41,4 +41,4 @@ add_executable(ex4
         Cards/Treasure.h
         Cards/Vampire.cpp
         Cards/Vampire.h Cards/Gang.cpp Cards/Gang.h
-        test_finalCheck.cpp)
+        tool/main.cpp)

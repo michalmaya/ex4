@@ -92,6 +92,7 @@ private:
     int m_currRound;
     int m_numOfCards;
     int m_numOfPlayers;
+    int m_winners;
     int m_inGamePlayers;
     Player** m_leadBoard;
 };
@@ -100,13 +101,13 @@ void initializeCardsMap(std::map<String, CardsType>& m);
 
 void initializeJobsMap(std::map<String, Jobs>& m);
 
-bool isAllAlpha(const std::string& s);
+bool isValidInput(const std::string& s);
 
 void pushCard(std::queue<Card*> &q, Card* card);
 
-bool isSorted(Player** &board, int size);
+bool isSorted(Player** &board, int start, int end);
 
-void updateLeadBoard(Player** &board, int size);
+void updateLeadBoard(Player** &board, int start, int end);
 
 int findInLeaderBoard(Player** &board, Player& player, int size);
 

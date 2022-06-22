@@ -4,6 +4,8 @@
 
 #include "Mtmchkin.h"
 
+#define DELIM '\n'
+
 using std::endl;
 using std::cerr;
 
@@ -12,7 +14,8 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
     m_deck(std::queue<Card*>()),
     m_status(GameStatus::MidGame),
     m_currRound(0),
-    m_numOfCards(0)
+    m_numOfCards(0),
+    m_winners(0)
 {
     printStartGameMessage();
 
@@ -26,13 +29,13 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
     initializeCardsMap(cardsMap);
     initializeJobsMap(jobsMap);
 
-    char line[256];
+    std::string line;
     int lineCounter = 1;
 
     bool isGang = false;
     Card* tempCard;
     Gang* tempGang = new Gang();
-    while (source.getline(line,sizeof (line))) {
+    while (getline(source,line,DELIM)) {
         auto cardsIt = cardsMap.find(line);
         bool validCard = true;
         if(cardsIt != cardsMap.end()) {
@@ -127,14 +130,14 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
 
     int players = 0;
 
-    std::cin.getline(line,sizeof (line));
+    getline(std::cin,line,DELIM);
     try {
         players = std::stoi(line);
     }
     catch ( ... ){}
     while(players > 6 || players < 2 ) {
         printInvalidInput();
-        std::cin.getline(line,sizeof (line));
+        getline(std::cin,line,DELIM);
         try {
             players = std::stoi(line);
         }
@@ -152,7 +155,7 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
     std::string name, job;
     Player* tempPlayer;
     while(players > 0){
-        std::cin.getline(line,sizeof (line));
+        getline(std::cin,line,DELIM);
         std::string input = line;
         int spacePos = input.find(' ');
         if(spacePos == -1)
@@ -162,13 +165,13 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
         }
 
         name = input.substr(0,spacePos);
-        if(!isAllAlpha(name)) {
+        if(!isValidInput(name)) {
             printInvalidName();
             continue;
         }
 
         job = input.substr(spacePos+1,input.length()-1);
-        if(!isAllAlpha(job)) {
+        if(!isValidInput(job)) {
             printInvalidClass();
             continue;
         }
@@ -211,14 +214,22 @@ void Mtmchkin::playRound() {
     printRoundStartMessage(m_currRound);
     for (int i=0; i<m_numOfPlayers; i++){
         String curPlayerName= m_Players.front()->getName();
-        if(m_Players.front()->isPlayerInGame()){
+        if(!m_Players.front()->isWon() && !m_Players.front()->isKnockedOut()){
             printTurnStartMessage(curPlayerName);
             m_deck.front()->playCard(*m_Players.front());
             if(m_Players.front()->isKnockedOut())
             {
                 int temp = findInLeaderBoard(m_leadBoard,*m_Players.front(),m_inGamePlayers);
-                m_leadBoard[temp] = m_leadBoard[m_inGamePlayers-1];
-                m_leadBoard[m_inGamePlayers-1] = m_Players.front();
+                if(temp >= 0) {
+                    m_leadBoard[temp] = m_leadBoard[m_winners + m_inGamePlayers - 1];
+                    m_leadBoard[m_inGamePlayers - 1] = m_Players.front();
+                }
+                --m_inGamePlayers;
+            }
+            if(m_Players.front()->isWon())
+            {
+                updateLeadBoard(m_leadBoard,m_winners,m_winners + m_inGamePlayers);
+                ++m_winners;
                 --m_inGamePlayers;
             }
             m_deck.push(m_deck.front());
@@ -228,7 +239,7 @@ void Mtmchkin::playRound() {
         m_Players.pop();
     }
     setWinLose();
-    updateLeadBoard(m_leadBoard,m_inGamePlayers);
+    updateLeadBoard(m_leadBoard,m_winners,m_winners + m_inGamePlayers);
 }
 
 int findInLeaderBoard(Player** &board,Player& player, int size)
@@ -240,9 +251,9 @@ int findInLeaderBoard(Player** &board,Player& player, int size)
     return -1;
 }
 
-bool isSorted(Player** &board, int size)
+bool isSorted(Player** &board, int start, int end)
 {
-    for (int i = 0; i < size - 1; ++i) {
+    for (int i = start; i < end - 1; ++i) {
         int firstLevel = board[i]->getLevel();
         int nextLevel = board[i+1]->getLevel();
         if(nextLevel > firstLevel)
@@ -255,11 +266,11 @@ bool isSorted(Player** &board, int size)
     return true;
 }
 
-void updateLeadBoard(Player** &board, int size)
+void updateLeadBoard(Player** &board, int start, int end)
 {
-    while(!isSorted(board,size))
+    while(!isSorted(board,start, end))
     {
-        for (int i = 0; i < size - 1; ++i) {
+        for (int i = start; i < end - 1; ++i) {
             int firstLevel = board[i]->getLevel();
             int nextLevel = board[i+1]->getLevel();
             if(nextLevel > firstLevel)
@@ -315,11 +326,24 @@ void initializeJobsMap(std::map<String ,Jobs> &m) {
     m["Wizard"] = Jobs::Wizard;
 }
 
-bool isAllAlpha(const std::string& s)
+bool isValidInput(const std::string& s)
 {
-    bool flag;
+    bool flag, skipFirst = true;
+    int repeatCounter = 0;
+    std::string repeatCheck;
     for (const auto &c: s) {
         flag = std::isalpha(c);
+        repeatCheck += c;
+        if(c == repeatCheck[repeatCounter] && !skipFirst)
+            repeatCounter++;
+        else {
+            repeatCounter = 0;
+            skipFirst = false;
+        }
+
+        if((unsigned)repeatCounter * 2 == repeatCheck.size())
+            flag = false;
+
         if(!flag)
             return false;
     }

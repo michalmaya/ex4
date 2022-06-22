@@ -110,8 +110,6 @@ int Player::getHP() const {
     return m_HP;
 }
 
-bool Player::isPlayerInGame() const {
-    if(isKnockedOut() || getLevel() >= 10)
-        return false;
-    return true;
+bool Player::isWon() const {
+    return getLevel() >= 10;
 }
