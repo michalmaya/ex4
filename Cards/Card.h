@@ -5,9 +5,8 @@
 #ifndef EX4_CARD_H
 #define EX4_CARD_H
 
-#include "Players/Player.h"
-#include "utilities.h"
-#include "string.h"
+#include "../utilities.h"
+#include "cstring"
 #include "ostream"
 
 typedef std::string String;

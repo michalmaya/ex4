@@ -1,0 +1,35 @@
+Card Details:
+Name: Goblin
+Force: 6
+Damage upon loss: 10
+Coins: 2
+-------------------------------
+Card Details:
+Name: Vampire
+Force: 10
+Damage upon loss: 10
+Coins: 2
+-------------------------------
+Card Details:
+Name: Dragon
+Force: 25
+Damage upon loss: Infinite
+Coins: 1000
+-------------------------------
+Card Details:
+Name: Treasure
+-------------------------------
+Card Details:
+Name: Merchant
+-------------------------------
+Card Details:
+Name: Fairy
+-------------------------------
+Card Details:
+Name: Barfight
+-------------------------------
+Card Details:
+Name: Pitfall
+-------------------------------
+Test 2 SUCCEEDED.
+

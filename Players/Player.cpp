@@ -1,5 +1,5 @@
 #include "Player.h"
-#include "utilities.h"
+#include "../utilities.h"
 
 Player::Player(const char* name,const char* job, int order, int maxHP, int force) {
     Player::m_name = name;

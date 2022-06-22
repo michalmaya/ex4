@@ -4,8 +4,8 @@
 
 #include "Pitfall.h"
 
-Pitfall::Pitfall() : Card("PItfall", 10)
-{};
+Pitfall::Pitfall() : Card("Pitfall", 10)
+{}
 
 Player& Pitfall:: playCard(Player& player){
     if (player.getJob() != "Rogue"){

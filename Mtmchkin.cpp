@@ -3,13 +3,9 @@
 //
 
 #include "Mtmchkin.h"
-#include "Exception.h"
-#include "utilities.h"
 
 using std::endl;
 using std::cerr;
-
-
 
 Mtmchkin::Mtmchkin(const std::string fileName) :
     m_Players(std::queue<Player*>()),
@@ -18,6 +14,8 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
     m_currRound(0),
     m_numOfCards(0)
 {
+    printStartGameMessage();
+
     std::ifstream source(fileName);
     if(!source) {
         throw DeckFileNotFound();
@@ -33,7 +31,7 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
 
     bool isGang = false;
     Card* tempCard;
-    Gang* tempGang;
+    Gang* tempGang = new Gang();
     while (source.getline(line,sizeof (line))) {
         auto cardsIt = cardsMap.find(line);
         bool validCard = true;
@@ -98,8 +96,14 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
         else
             validCard = false;
 
-        if (!validCard)
+        if (!validCard) {
+            delete tempGang;
+            for (int i = 0; i < m_numOfCards; ++i) {
+                delete m_deck.front();
+                m_deck.pop();
+            }
             throw DeckFileFormatError(lineCounter);
+        }
 
         if (!isGang) {
             pushCard(m_deck, tempCard);
@@ -109,11 +113,16 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
 
         ++lineCounter;
     }
+    delete tempGang;
 
-    if (m_numOfCards < 5)
+    if (m_numOfCards < 5) {
+        for (int i = 0; i < m_numOfCards; ++i) {
+            delete m_deck.front();
+            m_deck.pop();
+        }
         throw DeckFileInvalidSize();
+    }
 
-    printStartGameMessage();
     printEnterTeamSizeMessage();
 
     int players = 0;
@@ -141,6 +150,7 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
 
     printInsertPlayerMessage();
     std::string name, job;
+    Player* tempPlayer;
     while(players > 0){
         std::cin.getline(line,sizeof (line));
         std::string input = line;
@@ -165,7 +175,6 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
 
         auto jobIt = jobsMap.find(job);
         if(jobIt != jobsMap.end()) {
-            Player* tempPlayer;
             switch (jobIt->second) {
                 case Jobs::Wizard:
                     tempPlayer = new Wizard(name.c_str(),players);
@@ -329,6 +338,18 @@ void Mtmchkin::setWinLose(){
     if(isAllWinOrDead) {
         m_status = GameStatus::Over;
         printGameEndMessage();
+    }
+}
+
+Mtmchkin::~Mtmchkin() {
+    delete[] m_leadBoard;
+    for (int i = 0; i < m_numOfPlayers; ++i) {
+        delete m_Players.front();
+        m_Players.pop();
+    }
+    for (int i = 0; i < m_numOfCards; ++i) {
+        delete m_deck.front();
+        m_deck.pop();
     }
 }
 

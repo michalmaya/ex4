@@ -5,7 +5,7 @@
 #include "Barfight.h"
 
 Barfight::Barfight() : Card("Barfight", 10)
-{};
+{}
 
 Player& Barfight:: playCard(Player& player){
     if (player.getJob() != "Fighter"){

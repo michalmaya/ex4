@@ -1,11 +1,11 @@
 #include "Gang.h"
 
 Gang::Gang() :
+    Battle("Gang"),
     m_monsterQueue(std::queue<Battle*>()),
     m_gangSize(0),
-    m_aliveGangsters(0),
-    Battle("Gang")
-{};
+    m_aliveGangsters(0)
+{}
 
 void Gang::pushMonster(Battle* &monster) {
     m_gangSize++;

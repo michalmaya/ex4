@@ -4,11 +4,8 @@
 
 #include "Battle.h"
 
-#include <utility>
-
 Battle:: Battle(String name,int damage, int loot,int force) : Card(std::move(name), damage, loot, force)
-{};
-
+{}
 
 void Battle::printCard(ostream& os) const{
     bool isDragon= false;

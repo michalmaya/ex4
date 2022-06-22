@@ -2,7 +2,7 @@
 // Created by michalmaya on 16/06/2022.
 //
 
-#include "merchant.h"
+#include "Merchant.h"
 
 Merchant::Merchant() :
     Card("Merchant",0,0,FORCE_AMOUNT,HEAL_AMOUNT),
@@ -21,7 +21,7 @@ Player& Merchant :: playCard(Player& player)
         input = std::stoi(line);
     }
     catch ( ... ){}
-    while (input < 0 || input >= acts.size())
+    while (input < 0 || (unsigned)input >= acts.size())
     {
         printInvalidInput();
         std::cin.getline(line,sizeof (line));

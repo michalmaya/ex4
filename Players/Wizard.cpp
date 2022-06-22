@@ -3,7 +3,6 @@
 //
 
 #include "Wizard.h"
-#include "Fighter.h"
 
 
 Wizard::Wizard(const char *name, int order, int maxHP, int force) : Player(name,"Wizard", order, maxHP, force)

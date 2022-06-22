@@ -33,12 +33,12 @@ add_executable(ex4
         Cards/Gang.h
         Cards/Goblin.cpp
         Cards/Goblin.h
-        Cards/merchant.cpp
-        Cards/merchant.h
+        Cards/Merchant.cpp
+        Cards/Merchant.h
         Cards/Pitfall.cpp
         Cards/Pitfall.h
         Cards/Treasure.cpp
         Cards/Treasure.h
         Cards/Vampire.cpp
         Cards/Vampire.h Cards/Gang.cpp Cards/Gang.h
-        minitest.cpp)
+        test_finalCheck.cpp)

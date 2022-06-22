@@ -5,7 +5,7 @@
 #include "Fairy.h"
 
 Fairy:: Fairy() : Card ("Fairy", 0, 0, 0, 10)
-{};
+{}
 
 Player& Fairy:: playCard(Player &player){
     if(player.getJob()=="Wizard"){

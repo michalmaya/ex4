@@ -4,8 +4,6 @@
 
 #include "Card.h"
 
-#include <utility>
-
 Card::Card(String name, int damage, int loot, int force, int gain) : m_name(std::move(name)), m_damage(damage),
         m_loot (loot) ,m_force(force), m_gain(gain){}
 
@@ -40,5 +38,3 @@ ostream& operator<<(ostream& os, const Card& card)
     card.printCard(os);
     return os;
 }
-
-

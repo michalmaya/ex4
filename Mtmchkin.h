@@ -18,10 +18,13 @@
 #include "Cards/Dragon.h"
 #include "Cards/Fairy.h"
 #include "Cards/Goblin.h"
-#include "Cards/merchant.h"
+#include "Cards/Merchant.h"
 #include "Cards/Pitfall.h"
 #include "Cards/Treasure.h"
 #include "Cards/Gang.h"
+
+#include "Exception.h"
+#include "utilities.h"
 
 
 enum class GameStatus{Over, MidGame};
@@ -77,31 +80,35 @@ public:
 
     void setWinLose();
 
+    ~Mtmchkin();
+
+    void deleteDeck();
+
 
 private:
     std::queue<Player*> m_Players;
     std::queue<Card*> m_deck;
+    GameStatus m_status;
     int m_currRound;
     int m_numOfCards;
-    GameStatus m_status;
     int m_numOfPlayers;
     int m_inGamePlayers;
     Player** m_leadBoard;
 };
 
-static void initializeCardsMap(std::map<String, CardsType>& m);
+void initializeCardsMap(std::map<String, CardsType>& m);
 
-static void initializeJobsMap(std::map<String, Jobs>& m);
+void initializeJobsMap(std::map<String, Jobs>& m);
 
-static bool isAllAlpha(const std::string& s);
+bool isAllAlpha(const std::string& s);
 
-static void pushCard(std::queue<Card*> &q, Card* card);
+void pushCard(std::queue<Card*> &q, Card* card);
 
-static bool isSorted(Player** &board, int size);
+bool isSorted(Player** &board, int size);
 
-static void updateLeadBoard(Player** &board, int size);
+void updateLeadBoard(Player** &board, int size);
 
-static int findInLeaderBoard(Player** &board, Player& player, int size);
+int findInLeaderBoard(Player** &board, Player& player, int size);
 
 
 #endif /* MTMCHKIN_H_ */
