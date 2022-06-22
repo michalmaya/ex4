@@ -46,6 +46,7 @@ Player& Merchant :: playCard(Player& player)
             }
             else {
                 printMerchantInsufficientCoins(std::cout);
+                m_cost = 0;
             }
             break;
         case Actions::BuyForce:
@@ -55,6 +56,7 @@ Player& Merchant :: playCard(Player& player)
             }
             else {
                 printMerchantInsufficientCoins(std::cout);
+                m_cost = 0;
             }
             break;
     }

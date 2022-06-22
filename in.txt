@@ -1,7 +1,3 @@
-6
-Itay Fighter
-Pikach Rogue
-Pikacu Rogue
-Pikahu Rogue
-Pikchu Rogue
-Piachu Rogue
+2
+Simplton Wizard
+Trickelton Rogue

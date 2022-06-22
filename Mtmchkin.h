@@ -82,8 +82,6 @@ public:
 
     ~Mtmchkin();
 
-    void deleteDeck();
-
 
 private:
     std::queue<Player*> m_Players;
@@ -109,7 +107,7 @@ bool isSorted(Player** &board, int start, int end);
 
 void updateLeadBoard(Player** &board, int start, int end);
 
-int findInLeaderBoard(Player** &board, Player& player, int size);
+int findInLeaderBoard(Player** &board, Player& player, int start, int end);
 
 
 #endif /* MTMCHKIN_H_ */

@@ -136,7 +136,8 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
     }
     catch ( ... ){}
     while(players > 6 || players < 2 ) {
-        printInvalidInput();
+        printInvalidTeamSize();
+        printEnterTeamSizeMessage();
         getline(std::cin,line,DELIM);
         try {
             players = std::stoi(line);
@@ -157,7 +158,7 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
     while(players > 0){
         getline(std::cin,line,DELIM);
         std::string input = line;
-        int spacePos = input.find(' ');
+        int spacePos = (int)input.find(' ');
         if(spacePos == -1)
         {
             printInvalidInput();
@@ -217,21 +218,28 @@ void Mtmchkin::playRound() {
         if(!m_Players.front()->isWon() && !m_Players.front()->isKnockedOut()){
             printTurnStartMessage(curPlayerName);
             m_deck.front()->playCard(*m_Players.front());
+            int temp = findInLeaderBoard(m_leadBoard,*m_Players.front(),m_winners,m_winners + m_inGamePlayers);
             if(m_Players.front()->isKnockedOut())
             {
-                int temp = findInLeaderBoard(m_leadBoard,*m_Players.front(),m_inGamePlayers);
-                if(temp >= 0) {
-                    m_leadBoard[temp] = m_leadBoard[m_winners + m_inGamePlayers - 1];
-                    m_leadBoard[m_inGamePlayers - 1] = m_Players.front();
+                if(temp >= 0)
+                {
+                    int availableLastPlace = m_winners + m_inGamePlayers - 1;
+                    m_leadBoard[temp] = m_leadBoard[availableLastPlace];
+                    m_leadBoard[availableLastPlace] = m_Players.front();
                 }
                 --m_inGamePlayers;
             }
             if(m_Players.front()->isWon())
             {
-                updateLeadBoard(m_leadBoard,m_winners,m_winners + m_inGamePlayers);
+                if(temp >= 0)
+                {
+                    m_leadBoard[temp] = m_leadBoard[m_winners];
+                    m_leadBoard[m_winners] = m_Players.front();
+                }
                 ++m_winners;
                 --m_inGamePlayers;
             }
+
             m_deck.push(m_deck.front());
             m_deck.pop();
         }
@@ -242,9 +250,9 @@ void Mtmchkin::playRound() {
     updateLeadBoard(m_leadBoard,m_winners,m_winners + m_inGamePlayers);
 }
 
-int findInLeaderBoard(Player** &board,Player& player, int size)
+int findInLeaderBoard(Player** &board,Player& player, int start, int end)
 {
-    for (int i = 0; i < size; ++i) {
+    for (int i = start; i < end; ++i) {
         if(board[i]->getOrder() == player.getOrder())
             return i;
     }
@@ -254,14 +262,8 @@ int findInLeaderBoard(Player** &board,Player& player, int size)
 bool isSorted(Player** &board, int start, int end)
 {
     for (int i = start; i < end - 1; ++i) {
-        int firstLevel = board[i]->getLevel();
-        int nextLevel = board[i+1]->getLevel();
-        if(nextLevel > firstLevel)
+        if (board[i + 1]->getOrder() > board[i]->getOrder())
             return false;
-        else if (nextLevel == firstLevel) {
-            if (board[i + 1]->getOrder() > board[i]->getOrder())
-                return false;
-        }
     }
     return true;
 }
@@ -271,15 +273,8 @@ void updateLeadBoard(Player** &board, int start, int end)
     while(!isSorted(board,start, end))
     {
         for (int i = start; i < end - 1; ++i) {
-            int firstLevel = board[i]->getLevel();
-            int nextLevel = board[i+1]->getLevel();
-            if(nextLevel > firstLevel)
+            if(board[i + 1]->getOrder() > board[i]->getOrder())
                 std::swap(board[i],board[i+1]);
-            else if(nextLevel == firstLevel)
-            {
-                if(board[i + 1]->getOrder() > board[i]->getOrder())
-                    std::swap(board[i],board[i+1]);
-            }
         }
     }
 }
@@ -328,6 +323,9 @@ void initializeJobsMap(std::map<String ,Jobs> &m) {
 
 bool isValidInput(const std::string& s)
 {
+    if(s.size() > 15)
+        return false;
+
     bool flag, skipFirst = true;
     int repeatCounter = 0;
     std::string repeatCheck;
