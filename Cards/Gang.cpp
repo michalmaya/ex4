@@ -51,3 +51,10 @@ Player& Gang::loss(Player &player) {
     }
     return player;
 }
+
+Gang::~Gang() {
+    for (int i = 0; i < m_gangSize; ++i) {
+        delete m_monsterQueue.front();
+        m_monsterQueue.pop();
+    }
+}
