@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ex4::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ex4-Debug-8d63b95384e13c2bae88.json",
+					"jsonFile" : "target-ex4-Debug-4b5cf550a9ae2cddb3f0.json",
 					"name" : "ex4",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/shayr/Documents/GitHub/ex4/cmake-build-debug",
-		"source" : "C:/Users/shayr/Documents/GitHub/ex4"
+		"build" : "C:/Users/michalmaya/Documents/GitHub/ex4/cmake-build-debug",
+		"source" : "C:/Users/michalmaya/Documents/GitHub/ex4"
 	},
 	"version" : 
 	{
