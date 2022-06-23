@@ -4,7 +4,7 @@ int main()
 {
     const int MAX = 100;
     try {
-        Mtmchkin game("test288.deck");
+        Mtmchkin game("test0.deck");
         while (!game.isGameOver() && game.getNumberOfRounds() < MAX) {
             game.playRound();
             game.printLeaderBoard();
