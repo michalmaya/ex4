@@ -34,7 +34,7 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
 
     bool isGang = false;
     Card* tempCard;
-    Gang* tempGang = new Gang();
+    Gang* tempGang;
     while (getline(source,line,DELIM)) {
         auto cardsIt = cardsMap.find(line);
         bool validCard = true;
@@ -100,7 +100,6 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
             validCard = false;
 
         if (!validCard) {
-            delete tempGang;
             for (int i = 0; i < m_numOfCards; ++i) {
                 delete m_deck.front();
                 m_deck.pop();
@@ -116,7 +115,6 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
 
         ++lineCounter;
     }
-    delete tempGang;
 
     if (m_numOfCards < 5) {
         for (int i = 0; i < m_numOfCards; ++i) {
@@ -155,23 +153,21 @@ Mtmchkin::Mtmchkin(const std::string fileName) :
     printInsertPlayerMessage();
     std::string name, job;
     Player* tempPlayer;
-    while(players > 0){
-        getline(std::cin,line,DELIM);
-        std::string input = line;
-        int spacePos = (int)input.find(' ');
+    while(players > 0 && getline(std::cin,line,DELIM)){
+        int spacePos = (int)line.find(' ');
         if(spacePos == -1)
         {
             printInvalidInput();
             continue;
         }
 
-        name = input.substr(0,spacePos);
+        name = line.substr(0,spacePos);
         if(!isValidInput(name)) {
             printInvalidName();
             continue;
         }
 
-        job = input.substr(spacePos+1,input.length()-1);
+        job = line.substr(spacePos+1,line.length()-1);
         if(!isValidInput(job)) {
             printInvalidClass();
             continue;
